@@ -19,7 +19,8 @@ td = date.today()
 if year != str(td.year):
     year = '{}-{}'.format(year, td.year)
 
-copyright = '{}, Stefan Appelhoff.'.format(year)
+copyright = ('{}, Stefan Appelhoff (CC-BY-4.0). Last updated on {}'
+             .format(year, td.isoformat()))
 
 html_show_sphinx = False  # do not show "created using Sphinx X.Y"
 
@@ -28,7 +29,7 @@ html_show_sphinx = False  # do not show "created using Sphinx X.Y"
 # built documents.
 #
 # The short X.Y version.
-version = td.isoformat()
+version = ''
 
 # The full version, including alpha/beta/rc tags.
 release = version
@@ -51,7 +52,7 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 # documentation.
 html_theme_options = {
     'navbar_title': 'usb-to-ttl',
-    'bootswatch_theme': "litera",
+    'bootswatch_theme': "united",
     'navbar_sidebarrel': False,  # no "previous / next" navigation
     'navbar_pagenav': False,  # no "Page" navigation in sidebar
     'bootstrap_version': "3",
