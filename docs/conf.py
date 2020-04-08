@@ -13,13 +13,14 @@ extensions = [
 
 # General information about the project.
 project = 'usb-to-ttl'
-author = 'Stefan Appelhoff'
-year = '2020'
+author = 'Stefan Appelhoff & Tristan Stenner'
+year = '2019'
 td = date.today()
 if year != str(td.year):
     year = '{}-{}'.format(year, td.year)
 
-copyright = ('{}, Stefan Appelhoff (CC-BY-4.0). Last updated on {}'
+copyright = ('{}, Stefan Appelhoff & Tristan Stenner (CC-BY-4.0). '
+             'Last updated on {}'
              .format(year, td.isoformat()))
 
 html_show_sphinx = False  # do not show "created using Sphinx X.Y"
