@@ -57,7 +57,7 @@ Here we list some interesting non-academic sources and further or related readin
 Acknowledgements
 ----------------
 
-This project was supported as part of the `Fellow-Programm Freies Wissen`_ by `Wikimedia Germany`_, the `Stifterverband`_, and the `VolkswagenStiftung`_.
+This project was supported by the `Fellow-Programm Freies Wissen`_ of `Wikimedia Germany`_, the `Stifterverband`_, and the `VolkswagenStiftung`_.
 
 .. _new GitHub issue: https://github.com/sappelhoff/usb-to-ttl/issues/new
 .. _Python: https://www.python.org
