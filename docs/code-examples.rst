@@ -66,6 +66,9 @@ Now open up a serial connection and send some information.
    byte_to_send = bytes([1])  # send a "1"
    ser.write(byte_to_send)
 
+   # After measurements are done, close the connection
+   ser.close()
+
 Consider sampling rate of recording device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -104,5 +107,6 @@ Practically, this depends on the sampling rate: At a sampling rate of 1000Hz, th
        mysleep(waitsecs=0.001)  # wait for 1ms for recording device to catch this
        ser.write(bytes([0]))  # reset data status to `0`
 
+   ser.close()
 
 .. _pyserial: https://github.com/pyserial/pyserial
