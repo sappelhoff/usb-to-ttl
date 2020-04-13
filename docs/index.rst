@@ -5,6 +5,7 @@ This website contains supplementary material to the article **"In COM we trust: 
 
 A preprint will be available soon.
 
+Please feel free to open a `new GitHub issue`_ for any questions, suggestions, or comments you might have.
 
 .. |ORCID_appelhoff| image:: https://orcid.org/sites/default/files/images/orcid_16x16.png
                      :target: https://orcid.org/0000-0001-8002-0877
@@ -14,12 +15,45 @@ A preprint will be available soon.
                    :target: https://orcid.org/0000-0002-2428-9051
                    :alt: ORCID ID Tristan Stenner
 
-Quickstart
-----------
+Brief Overview
+--------------
 
-to be done
+.. note:: Short summary of what the article is about.
+
+
+Supplementary Material
+----------------------
+
+Data and analysis scripts from the article
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: The data and analysis scripts used in the article will be provided here once the preprint is out.
+
+DIY instructions
+^^^^^^^^^^^^^^^^
+
+.. note:: including shopping list, build instructions, example firmware
+
+Code examples
+^^^^^^^^^^^^^
+
+.. note:: how to use the device after building it
+
+List of commercial alternatives
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: Present a list, not complete. Feel free to contribute to the list...
 
 
 Acknowledgements
 ----------------
-This project was supported by a fellowship from the Wikimedia program XXX.
+This project was supported as part of the `Fellow-Programm Freies Wissen`_ by `Wikimedia Germany`_, the `Stifterverband`_, and the `VolkswagenStiftung`_.
+
+
+
+
+.. _new GitHub issue: https://github.com/sappelhoff/usb-to-ttl/issues/new
+.. _Fellow-Programm Freies Wissen: https://de.wikiversity.org/wiki/Wikiversity:Fellow-Programm_Freies_Wissen
+.. _Wikimedia Germany: https://www.wikimedia.de/
+.. _Stifterverband: https://www.stifterverband.org/
+.. _VolkswagenStiftung: https://www.volkswagenstiftung.de/
