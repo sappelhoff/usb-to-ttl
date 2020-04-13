@@ -19,7 +19,7 @@ td = date.today()
 if year != str(td.year):
     year = '{}-{}'.format(year, td.year)
 
-copyright = ('{}, Stefan Appelhoff & Tristan Stenner (CC-BY-4.0). '
+copyright = ('{}, Stefan Appelhoff & Tristan Stenner (CC BY 4.0). '
              'Last updated on {}'
              .format(year, td.isoformat()))
 
