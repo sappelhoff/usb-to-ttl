@@ -58,5 +58,9 @@ html_theme_options = {
     'navbar_pagenav': False,  # no "Page" navigation in sidebar
     'bootstrap_version': "3",
     'navbar_links': [
+        ("Data+Scripts", "data-and-scripts"),
+        ("DIY", "diy-instructions"),
+        ("Code examples", "code-examples"),
+        ("Commercial alternatives", "commercial-alternatives"),
         ("GitHub", "https://github.com/sappelhoff/usb-to-ttl", True),
     ]}

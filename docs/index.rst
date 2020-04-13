@@ -24,23 +24,25 @@ Brief Overview
 Supplementary Material
 ----------------------
 
-Data and analysis scripts from the article
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`data-and-scripts`
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: The data and analysis scripts used in the article will be provided here once the preprint is out.
 
-DIY instructions
-^^^^^^^^^^^^^^^^
+:ref:`diy-instructions`
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: including shopping list, build instructions, example firmware
 
-Code examples
-^^^^^^^^^^^^^
+:ref:`code-examples`
+^^^^^^^^^^^^^^^^^^^^
 
 .. note:: how to use the device after building it
 
-List of commercial alternatives
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`commercial-alternatives`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 
 .. note:: Present a list, not complete. Feel free to contribute to the list...
 
