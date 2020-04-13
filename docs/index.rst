@@ -42,10 +42,7 @@ Supplementary Material
 :ref:`commercial-alternatives`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-
-.. note:: Present a list, not complete. Feel free to contribute to the list...
-
+For convenience we provide a (non-complete) list of commercial alternatives for event marking via USB.
 
 Acknowledgements
 ----------------
