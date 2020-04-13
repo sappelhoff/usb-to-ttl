@@ -27,31 +27,40 @@ Supplementary Material
 :ref:`data-and-scripts`
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: The data and analysis scripts used in the article will be provided here once the preprint is out.
+The data used in the article **"In COM we trust: feasibility of USB based event marking"** as well as the analysis scripts are supplied.
+Additionally, we provide code to reproduce the figures used in the article.
 
 :ref:`diy-instructions`
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: including shopping list, build instructions, example firmware
+In this section we supply a shopping list, build instructions, and example firmware to build a simple hardware to mark events from USB to TTL.
 
 :ref:`code-examples`
 ^^^^^^^^^^^^^^^^^^^^
 
-.. note:: how to use the device after building it
+In this section we provide examples on *how* to mark events from USB to TTL using popular programming languages (e.g., `Python`_).
 
 :ref:`commercial-alternatives`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For convenience we provide a (non-complete) list of commercial alternatives for event marking via USB.
 
+Related articles throughout the Internet
+----------------------------------------
+
+Here we list some interesting non-academic sources and further or related readings in no particular order:
+
+- https://medium.com/@tltx/the-void-left-by-the-parallel-port-51eb6c919e8a
+- http://psy.swan.ac.uk/staff/freegard/audio%20switch%20report.pdf
+- https://dubioussentiments.wordpress.com/2015/05/05/replacing-parallel-port-signaling-with-usb/
+
 Acknowledgements
 ----------------
+
 This project was supported as part of the `Fellow-Programm Freies Wissen`_ by `Wikimedia Germany`_, the `Stifterverband`_, and the `VolkswagenStiftung`_.
 
-
-
-
 .. _new GitHub issue: https://github.com/sappelhoff/usb-to-ttl/issues/new
+.. _Python: https://www.python.org
 .. _Fellow-Programm Freies Wissen: https://de.wikiversity.org/wiki/Wikiversity:Fellow-Programm_Freies_Wissen
 .. _Wikimedia Germany: https://www.wikimedia.de/
 .. _Stifterverband: https://www.stifterverband.org/
