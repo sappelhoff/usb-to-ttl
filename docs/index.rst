@@ -18,8 +18,19 @@ Please feel free to open a `new GitHub issue`_ for any questions, suggestions, o
 Brief Overview
 --------------
 
-.. note:: Short summary of what the article is about.
+A multitude of scientific disciplines employs experimental research involving the presentation of stimuli to research subjects.
+Be it displaying a stimulus to a human, applying an electric shock to a rodent, or switching off the lights in a room where an autonomous robot is trying to navigate.
+Researchers need to record these events together with other data to make sense of the results.
 
+Traditionally, the `parallel port`_ was the interface of choice for event marking, and a lot of hardware for science experiments depends on this interface.
+Yet, the parallel port has been replaced by the universal serial bus (`USB`_) protocol, which means that it is becoming more and more difficult to obtain modern computer hardware that supports a parallel port "out of the box".
+
+Replacements of the parallel port interface are needed to make sure that all the benefits that the parallel port supplied in the past (speed, simplicity, robustness) will be available in the future.
+
+One such replacement is relay output data via USB to a dedicated microcontroller unit (e.g., an `Arduino`_ or a `Teensy`_), which then converts the incoming data into a parallel signal, and sends it on to its destination.
+
+In our article, **"In COM we trust: feasibility of USB based event marking"**, we show the feasibility of such an approach through a direct comparison of USB based event marking with the parallel port.
+On this website we showcase supplementary material.
 
 Supplementary Material
 ----------------------
@@ -60,6 +71,10 @@ Acknowledgements
 This project was supported by the `Fellow-Programm Freies Wissen`_ of `Wikimedia Germany`_, the `Stifterverband`_, and the `VolkswagenStiftung`_.
 
 .. _new GitHub issue: https://github.com/sappelhoff/usb-to-ttl/issues/new
+.. _parallel port: https://en.wikipedia.org/wiki/Parallel_port
+.. _USB: https://en.wikipedia.org/wiki/USB
+.. _Arduino: https://www.arduino.cc/
+.. _Teensy: https://www.pjrc.com/teensy/
 .. _Python: https://www.python.org
 .. _Fellow-Programm Freies Wissen: https://de.wikiversity.org/wiki/Wikiversity:Fellow-Programm_Freies_Wissen
 .. _Wikimedia Germany: https://www.wikimedia.de/
