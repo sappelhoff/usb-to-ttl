@@ -74,39 +74,16 @@ Consider sampling rate of recording device
 
 For event marking, we usually want to start with a state of ``0``, then set the data to some byte (e.g., ``1``), and finally reset the state to ``0`` again.
 Notably, the time that the data is set to a byte different from ``0`` needs to be long enough for our recording device to notice.
-Practically, this depends on the sampling rate: At a sampling rate of 1000Hz, the data needs to be "switched on" for *at least* 1ms (at a sampling rate of 250Hz, for 4ms, etc.).
+How long it "long enough" depends on the sampling rate: At a sampling rate of 1000Hz, the data needs to be "switched on" for *at least* 1ms (at a sampling rate of 250Hz, for 4ms, etc.).
 
-.. code-block:: python
+When using the firmware we recommend in this project for running your ``usb-to-ttl`` device, all of this is taken care of in the microcontroller, see :ref:`firmware`:
 
-   import serial
-   from time import perf_counter
+.. literalinclude:: ../firmware.ino
+   :language: C
+   :lines: 19-27
 
-   # Define a function to help us accurately wait a certain amount of time
-   def mysleep(waitsecs):
-   """Block execution of further code for `waitsecs` seconds."""
-       twaited = 0
-       start = perf_counter()
-       while twaited < waitsecs:
-           twaited = perf_counter() - start
+This part of the firmware sets the data, then delays by a bit, and then resets to ``0``.
+Of course, handling this issue in the microcontroller also limits the frequency with which you can send signals (every 2000 milliseconds in our firmware example), so don't forget to adjust the ``delay`` to your needs.
 
-   ser = serial.Serial(
-       port="COM4",
-       baudrate=115200,
-       bytesize=serial.EIGHTBITS,  # set this to the amount of data you want to send
-       )
-
-   # Set data status to `0`
-   ser.write(bytes([0]))
-
-   # Let's send some information: Bytes from 1 to 10
-   # We assume that our recording device has a sampling rate of 1000Hz
-   for data in range(1, 10):
-       byte_to_send = bytes([data])
-
-       ser.write(byte_to_send)  # send data
-       mysleep(waitsecs=0.001)  # wait for 1ms for recording device to catch this
-       ser.write(bytes([0]))  # reset data status to `0`
-
-   ser.close()
 
 .. _pyserial: https://github.com/pyserial/pyserial
