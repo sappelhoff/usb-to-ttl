@@ -85,6 +85,8 @@ Step 4
 
    The finished device with an attached LPT cable (parallel port).
 
+.. _firmware:
+
 Firmware
 --------
 
