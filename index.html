@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Content &#8212; usb-to-ttl  documentation</title>
+    <title>usb-to-ttl &#8212; usb-to-ttl  documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -41,6 +41,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
+                <li><a href="data-and-scripts.html">Data+Scripts</a></li>
+                <li><a href="diy-instructions.html">DIY</a></li>
+                <li><a href="code-examples.html">Code examples</a></li>
+                <li><a href="commercial-alternatives.html">Commercial alternatives</a></li>
                 <li><a href="https://github.com/sappelhoff/usb-to-ttl">GitHub</a></li>
             
             
@@ -82,9 +86,56 @@
   <div class="row">
     <div class="body col-md-12 content" role="main">
       
-  <div class="section" id="content">
-<h1>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h1>
-<p>to be done</p>
+  <div class="section" id="usb-to-ttl">
+<h1>usb-to-ttl<a class="headerlink" href="#usb-to-ttl" title="Permalink to this headline">¶</a></h1>
+<p>This website contains supplementary material to the article <strong>“In COM we trust: feasibility of USB based event marking”</strong>, by Stefan Appelhoff <a class="reference external" href="https://orcid.org/0000-0001-8002-0877"><img alt="ORCID ID Stefan Appelhoff" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" /></a> and Tristan Stenner <a class="reference external" href="https://orcid.org/0000-0002-2428-9051"><img alt="ORCID ID Tristan Stenner" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" /></a>.</p>
+<p>A preprint will be available soon.</p>
+<p>Please feel free to open a <a class="reference external" href="https://github.com/sappelhoff/usb-to-ttl/issues/new">new GitHub issue</a> for any questions, suggestions, or comments you might have.</p>
+<div class="section" id="brief-overview">
+<h2>Brief Overview<a class="headerlink" href="#brief-overview" title="Permalink to this headline">¶</a></h2>
+<p>A multitude of scientific disciplines employs experimental research involving the presentation of stimuli to research subjects.
+Be it displaying a stimulus to a human, applying an electric shock to a rodent, or switching off the lights in a room where an autonomous robot is trying to navigate.
+Researchers need to record these events together with other data to make sense of the results.</p>
+<p>Traditionally, the <a class="reference external" href="https://en.wikipedia.org/wiki/Parallel_port">parallel port</a> was the interface of choice for event marking, and a lot of hardware for science experiments depends on this interface.
+Yet, the parallel port has been replaced by the universal serial bus (<a class="reference external" href="https://en.wikipedia.org/wiki/USB">USB</a>) protocol, which means that it is becoming more and more difficult to obtain modern computer hardware that supports a parallel port “out of the box”.</p>
+<p>Replacements of the parallel port interface are needed to make sure that all the benefits that the parallel port supplied in the past (speed, simplicity, robustness) will be available in the future.</p>
+<p>One such replacement is relay output data via USB to a dedicated microcontroller unit (e.g., an <a class="reference external" href="https://www.arduino.cc/">Arduino</a> or a <a class="reference external" href="https://www.pjrc.com/teensy/">Teensy</a>), which then converts the incoming data into a parallel signal, and sends it on to its destination.</p>
+<p>In our article, <strong>“In COM we trust: feasibility of USB based event marking”</strong>, we show the feasibility of such an approach through a direct comparison of USB based event marking with the parallel port.
+On this website we showcase supplementary material.</p>
+</div>
+<div class="section" id="supplementary-material">
+<h2>Supplementary Material<a class="headerlink" href="#supplementary-material" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-and-scripts">
+<h3><a class="reference internal" href="data-and-scripts.html#data-and-scripts"><span class="std std-ref">Data and analysis scripts from the article</span></a><a class="headerlink" href="#data-and-scripts" title="Permalink to this headline">¶</a></h3>
+<p>The data used in the article <strong>“In COM we trust: feasibility of USB based event marking”</strong> as well as the analysis scripts are supplied.
+Additionally, we provide code to reproduce the figures used in the article.</p>
+</div>
+<div class="section" id="diy-instructions">
+<h3><a class="reference internal" href="diy-instructions.html#diy-instructions"><span class="std std-ref">Do-it-yourself instructions</span></a><a class="headerlink" href="#diy-instructions" title="Permalink to this headline">¶</a></h3>
+<p>In this section we supply a shopping list, build instructions, and example firmware to build a simple hardware to mark events from USB to TTL.</p>
+</div>
+<div class="section" id="code-examples">
+<h3><a class="reference internal" href="code-examples.html#code-examples"><span class="std std-ref">Code examples</span></a><a class="headerlink" href="#code-examples" title="Permalink to this headline">¶</a></h3>
+<p>In this section we provide examples on <em>how</em> to mark events from USB to TTL using popular programming languages (e.g., <a class="reference external" href="https://www.python.org">Python</a>).</p>
+</div>
+<div class="section" id="commercial-alternatives">
+<h3><a class="reference internal" href="commercial-alternatives.html#commercial-alternatives"><span class="std std-ref">List of commercial alternatives</span></a><a class="headerlink" href="#commercial-alternatives" title="Permalink to this headline">¶</a></h3>
+<p>For convenience we provide a (non-complete) list of commercial alternatives for event marking via USB.</p>
+</div>
+</div>
+<div class="section" id="related-articles-throughout-the-internet">
+<h2>Related articles throughout the Internet<a class="headerlink" href="#related-articles-throughout-the-internet" title="Permalink to this headline">¶</a></h2>
+<p>Here we list some interesting non-academic sources and further or related readings in no particular order:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/&#64;tltx/the-void-left-by-the-parallel-port-51eb6c919e8a">https://medium.com/&#64;tltx/the-void-left-by-the-parallel-port-51eb6c919e8a</a></p></li>
+<li><p><a class="reference external" href="http://psy.swan.ac.uk/staff/freegard/audio%20switch%20report.pdf">http://psy.swan.ac.uk/staff/freegard/audio%20switch%20report.pdf</a></p></li>
+<li><p><a class="reference external" href="https://dubioussentiments.wordpress.com/2015/05/05/replacing-parallel-port-signaling-with-usb/">https://dubioussentiments.wordpress.com/2015/05/05/replacing-parallel-port-signaling-with-usb/</a></p></li>
+</ul>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>This project was supported by the <a class="reference external" href="https://de.wikiversity.org/wiki/Wikiversity:Fellow-Programm_Freies_Wissen">Fellow-Programm Freies Wissen</a> of <a class="reference external" href="https://www.wikimedia.de/">Wikimedia Germany</a>, the <a class="reference external" href="https://www.stifterverband.org/">Stifterverband</a>, and the <a class="reference external" href="https://www.volkswagenstiftung.de/">VolkswagenStiftung</a>.</p>
+</div>
 </div>
 
 
@@ -99,7 +150,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2019-2020, Stefan Appelhoff &amp; Tristan Stenner (CC-BY-4.0). Last updated on 2020-04-08.<br/>
+        &copy; Copyright 2019-2020, Stefan Appelhoff &amp; Tristan Stenner (CC BY 4.0). Last updated on 2020-04-15.<br/>
     </p>
   </div>
 </footer>
