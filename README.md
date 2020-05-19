@@ -4,7 +4,7 @@ by](https://licensebuttons.net/l/by/3.0/88x31.png)](https://creativecommons.org/
 \!](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/sappelhoff/usb-to-ttl/issues/new)
 [![CircleCI](https://circleci.com/gh/sappelhoff/usb-to-ttl.svg?style=shield)](https://circleci.com/gh/sappelhoff/usb-to-ttl)
 
-# usb-to-ttl
+# USB-to-TTL
 
 This repository contains the source code for the `usb-to-ttl` documentation
 page. Please see the [documentation](https://stefanappelhoff.com/usb-to-ttl/).
@@ -17,3 +17,16 @@ Published with the help of:
  - [sphinx-bootstrap-theme](https://github.com/ryan-roemer/sphinx-bootstrap-theme)
  - [CircleCI](https://circleci.com/blog/deploying-documentation-to-github-pages-with-continuous-integration/) (link to build guide)
  - [GitHub Pages](https://pages.github.com/)
+
+# Build instructions
+
+To build the documentation page yourself, you need to have
+[Python](https://www.python.org/) version 3.4 or higher installed, which
+includes the `pip` tool.
+
+1. Navigate to the root of the `usb-to-ttl` directory.
+1. From the command line, call `pip install -r requirements` to install
+   dependencies.
+1. Now navigate to the `docs` directory and call `make html` to build the html
+   files.
+1. Finally, go to `docs/_build` and open `index.html` to view the documentation
