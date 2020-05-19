@@ -7,11 +7,11 @@ A preprint will be available soon.
 
 Please feel free to open a `new GitHub issue`_ for any questions, suggestions, or comments you might have.
 
-.. |ORCID_appelhoff| image:: https://orcid.org/sites/default/files/images/orcid_16x16.png
+.. |ORCID_appelhoff| image:: _static/orcid_16x16.png
                      :target: https://orcid.org/0000-0001-8002-0877
                      :alt: (ORCID ID Stefan Appelhoff)
 
-.. |ORCID_stenner| image:: https://orcid.org/sites/default/files/images/orcid_16x16.png
+.. |ORCID_stenner| image:: _static/orcid_16x16.png
                    :target: https://orcid.org/0000-0002-2428-9051
                    :alt: (ORCID ID Tristan Stenner)
 
