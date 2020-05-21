@@ -1,8 +1,6 @@
-[![licensebuttons
-by](https://licensebuttons.net/l/by/3.0/88x31.png)](https://creativecommons.org/licenses/by/4.0)
-[![Ask Me Anything
-\!](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/sappelhoff/usb-to-ttl/issues/new)
-[![CircleCI](https://circleci.com/gh/sappelhoff/usb-to-ttl.svg?style=shield)](https://circleci.com/gh/sappelhoff/usb-to-ttl)
+[![licensebuttonsby](https://licensebuttons.net/l/by/3.0/88x31.png)](https://creativecommons.org/licenses/by/4.0)
+[![Ask Me Anything!](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/sappelhoff/usb-to-ttl/issues/new)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3838692.svg)](https://doi.org/10.5281/zenodo.3838692)
 
 # USB-to-TTL
 
@@ -30,3 +28,9 @@ includes the `pip` tool.
 1. Now navigate to the `docs` directory and call `make html` to build the html
    files.
 1. Finally, go to `docs/_build` and open `index.html` to view the documentation
+
+# Build status
+
+Is it green?
+
+[![CircleCI](https://circleci.com/gh/sappelhoff/usb-to-ttl.svg?style=shield)](https://circleci.com/gh/sappelhoff/usb-to-ttl)

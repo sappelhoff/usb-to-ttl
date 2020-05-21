@@ -7,6 +7,8 @@ A preprint will be available soon.
 
 Please feel free to open a `new GitHub issue`_ for any questions, suggestions, or comments you might have.
 
+The source for this website is persistently stored on Zenodo (`https://doi.org/10.5281/zenodo.3838692 <https://doi.org/10.5281/zenodo.3838692>`_) and can be used to build the website locally (see ``README.md`` file at the root of the archive).
+
 .. |ORCID_appelhoff| image:: _static/orcid_16x16.png
                      :target: https://orcid.org/0000-0001-8002-0877
                      :alt: (ORCID ID Stefan Appelhoff)
