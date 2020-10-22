@@ -66,6 +66,9 @@ Here we list some interesting non-academic sources and further or related readin
 - https://medium.com/@tltx/the-void-left-by-the-parallel-port-51eb6c919e8a
 - http://psy.swan.ac.uk/staff/freegard/audio%20switch%20report.pdf
 - https://dubioussentiments.wordpress.com/2015/05/05/replacing-parallel-port-signaling-with-usb/
+- https://computer.howstuffworks.com/parallel-port1.htm
+- https://computingforpsychologists.wordpress.com/2011/05/16/ttl-technology-getting-things-talking-to-each-other/
+- https://computingforpsychologists.wordpress.com/2012/04/15/how-to-make-your-own-parallel-port-response-boxes/
 
 Acknowledgements
 ----------------
