@@ -9,7 +9,12 @@ import sphinx_bootstrap_theme
 # ones.
 extensions = [
     "sphinx.ext.githubpages",
+    "sphinx_copybutton",
 ]
+
+# configure sphinx-copybutton
+copybutton_prompt_text = r">>> |\.\.\. |\$ "
+copybutton_prompt_is_regexp = True
 
 # General information about the project.
 project = 'usb-to-ttl'
