@@ -487,14 +487,22 @@
 101
 102
 103
-104</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+104
+105
+106
+107
+108
+109
+110
+111</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="sd">&quot;&quot;&quot;Measure TTL trigger sending latency of several devices.</span>
 
 <span class="sd">Required packages:</span>
 
-<span class="sd">- numpy</span>
-<span class="sd">- pylsl</span>
+<span class="sd">- numpy (https://pypi.org/project/numpy/)</span>
 <span class="sd">- psychtoolbox (https://pypi.org/project/psychtoolbox/)</span>
+<span class="sd">- pylsl (https://pypi.org/project/pylsl/)</span>
+<span class="sd">- pyparallel (https://pypi.org/project/pyparallel/)</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 
@@ -536,7 +544,8 @@
 
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># serial port</span>
-    <span class="n">ser</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ptb</span><span class="o">.</span><span class="n">IOPort</span><span class="p">(</span><span class="s1">&#39;OpenSerialPort&#39;</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="s1">&#39;BaudRate=115200 FlowControl=None ReceiveTimeout=0.05&#39;</span><span class="p">)</span>
+    <span class="n">ser</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ptb</span><span class="o">.</span><span class="n">IOPort</span><span class="p">(</span><span class="s1">&#39;OpenSerialPort&#39;</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span>
+                        <span class="s1">&#39;BaudRate=115200 FlowControl=None ReceiveTimeout=0.05&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">send_trigger</span><span class="p">():</span>
         <span class="n">ptb</span><span class="o">.</span><span class="n">IOPort</span><span class="p">(</span><span class="s1">&#39;Write&#39;</span><span class="p">,</span> <span class="n">ser</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\x01</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -554,7 +563,10 @@
 
 <span class="c1"># Get the psychHID index for the emulated keyboard</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">kbdidx</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">dev</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">dev</span> <span class="ow">in</span> <span class="n">ptb</span><span class="o">.</span><span class="n">PsychHID</span><span class="p">(</span><span class="s1">&#39;devices&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="k">if</span> <span class="n">dev</span><span class="p">[</span><span class="s1">&#39;product&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Teensyduino&#39;</span><span class="p">)))</span>
+    <span class="n">kbdidx</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">dev</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">dev</span> <span class="ow">in</span> <span class="n">ptb</span><span class="o">.</span><span class="n">PsychHID</span><span class="p">(</span><span class="s1">&#39;devices&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+         <span class="k">if</span> <span class="n">dev</span><span class="p">[</span><span class="s1">&#39;product&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Teensyduino&#39;</span><span class="p">))</span>
+    <span class="p">)</span>
 <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
     <span class="n">kbdidx</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -570,7 +582,9 @@
 <span class="n">ptb</span><span class="o">.</span><span class="n">GetSecs</span><span class="p">()</span>
 
 <span class="c1"># Make sure LSL and PTB use the same underlying clock</span>
-<span class="n">timediff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">pylsl</span><span class="o">.</span><span class="n">local_clock</span><span class="p">()</span><span class="o">-</span><span class="n">ptb</span><span class="o">.</span><span class="n">GetSecs</span><span class="p">()</span><span class="o">+</span><span class="n">ptb</span><span class="o">.</span><span class="n">GetSecs</span><span class="p">()</span><span class="o">-</span><span class="n">pylsl</span><span class="o">.</span><span class="n">local_clock</span><span class="p">())</span>
+<span class="n">timediff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span>
+    <span class="n">pylsl</span><span class="o">.</span><span class="n">local_clock</span><span class="p">()</span><span class="o">-</span><span class="n">ptb</span><span class="o">.</span><span class="n">GetSecs</span><span class="p">()</span><span class="o">+</span><span class="n">ptb</span><span class="o">.</span><span class="n">GetSecs</span><span class="p">()</span><span class="o">-</span><span class="n">pylsl</span><span class="o">.</span><span class="n">local_clock</span><span class="p">()</span>
+<span class="p">)</span>
 <span class="k">assert</span><span class="p">(</span><span class="n">timediff</span> <span class="o">&lt;</span> <span class="mf">1e-3</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -608,7 +622,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2019-2021, Stefan Appelhoff &amp; Tristan Stenner (CC BY 4.0). Last updated on 2021-01-10.<br/>
+        &copy; Copyright 2019-2021, Stefan Appelhoff &amp; Tristan Stenner (CC BY 4.0). Last updated on 2021-01-11.<br/>
     </p>
   </div>
 </footer>
