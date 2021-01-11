@@ -8,6 +8,10 @@ Required packages:
 - pylsl (https://pypi.org/project/pylsl/)
 - pyparallel (https://pypi.org/project/pyparallel/)
 
+MIT License
+
+Copyright 2021 Stefan Appelhoff, Tristan Stenner
+
 """
 
 import os
