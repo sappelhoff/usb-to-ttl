@@ -24,7 +24,7 @@ Firmware used on device during study
 
 This firmware written in C was running on each device that was tested (except the parallel port).
 
-.. literalinclude:: ../scripts_used_in_study/firmware_used_in_study.ino
+.. literalinclude:: ../scripts/scripts_used_in_study/firmware_used_in_study.ino
    :language: C
    :linenos:
 
@@ -33,6 +33,6 @@ Script used on host computer during study
 
 This Python script was running on the host computer.
 
-.. literalinclude:: ../scripts_used_in_study/script_used_in_study.py
+.. literalinclude:: ../scripts/scripts_used_in_study/script_used_in_study.py
    :language: Python
    :linenos:

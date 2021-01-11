@@ -78,7 +78,7 @@ How long it "long enough" depends on the sampling rate: At a sampling rate of 10
 
 When using the firmware we recommend in this project for running your ``usb-to-ttl`` device, all of this is taken care of in the microcontroller, see :ref:`firmware`:
 
-.. literalinclude:: ../firmware.ino
+.. literalinclude:: ../scripts/commented_firmware.ino
    :language: C
    :lines: 19-27
 

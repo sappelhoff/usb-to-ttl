@@ -219,7 +219,25 @@ Take care to define the <code class="docutils literal notranslate"><span class="
 41
 42
 43
-44</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;Arduino.h&quot;</span><span class="c1">;</span><span class="cp"></span>
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">Device firmware for a USB trigger box (Appelhoff &amp; Stenner, 2021).</span>
+
+<span class="cm">MIT License</span>
+
+<span class="cm">Copyright 2021 Stefan Appelhoff, Tristan Stenner</span>
+
+<span class="cm">*/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;Arduino.h&quot;</span><span class="c1">;</span><span class="cp"></span>
 <span class="c1">// the following pin numbers depend on where you actually put the wires on your device</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="n">outputPins</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
 

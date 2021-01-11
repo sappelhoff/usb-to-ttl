@@ -228,43 +228,13 @@
 117
 118
 119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+120</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">Device firmware for a USB trigger box (Appelhoff &amp; Stenner, 2021).</span>
 
 <span class="cm">MIT License</span>
 
-<span class="cm">Copyright (c) 2021 Tristan Stenner</span>
+<span class="cm">Copyright 2021 Stefan Appelhoff, Tristan Stenner</span>
 
-<span class="cm">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
-<span class="cm">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
-<span class="cm">in the Software without restriction, including without limitation the rights</span>
-<span class="cm">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
-<span class="cm">copies of the Software, and to permit persons to whom the Software is</span>
-<span class="cm">furnished to do so, subject to the following conditions:</span>
-<span class="cm">The above copyright notice and this permission notice shall be included in all</span>
-<span class="cm">copies or substantial portions of the Software.</span>
-<span class="cm">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
-<span class="cm">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
-<span class="cm">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
-<span class="cm">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
-<span class="cm">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
-<span class="cm">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
-<span class="cm">SOFTWARE.</span>
 <span class="cm">*/</span>
 
 <span class="c1">// Teensys can send emulated key presses to the host computer.</span>
@@ -494,7 +464,11 @@
 108
 109
 110
-111</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+111
+112
+113
+114
+115</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="sd">&quot;&quot;&quot;Measure TTL trigger sending latency of several devices.</span>
 
 <span class="sd">Required packages:</span>
@@ -503,6 +477,10 @@
 <span class="sd">- psychtoolbox (https://pypi.org/project/psychtoolbox/)</span>
 <span class="sd">- pylsl (https://pypi.org/project/pylsl/)</span>
 <span class="sd">- pyparallel (https://pypi.org/project/pyparallel/)</span>
+
+<span class="sd">MIT License</span>
+
+<span class="sd">Copyright 2021 Stefan Appelhoff, Tristan Stenner</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 

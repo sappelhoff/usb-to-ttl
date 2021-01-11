@@ -155,15 +155,13 @@ This requires a different procedure, depending on the operating system.</p>
 Notably, the time that the data is set to a byte different from <code class="docutils literal notranslate"><span class="pre">0</span></code> needs to be long enough for our recording device to notice.
 How long it “long enough” depends on the sampling rate: At a sampling rate of 1000Hz, the data needs to be “switched on” for <em>at least</em> 1ms (at a sampling rate of 250Hz, for 4ms, etc.).</p>
 <p>When using the firmware we recommend in this project for running your <code class="docutils literal notranslate"><span class="pre">usb-to-ttl</span></code> device, all of this is taken care of in the microcontroller, see <a class="reference internal" href="diy-instructions.html#firmware"><span class="std std-ref">Firmware</span></a>:</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span>  <span class="c1">// Set the 8 pins to correspond to the byte</span>
-  <span class="n">setOutputs</span><span class="p">(</span><span class="n">inChar</span><span class="p">);</span>
-
-  <span class="c1">// Leave the pins ON for long enough to be detected</span>
-  <span class="c1">// This depends on the sampling rate of the device that receives the byte</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
-
-  <span class="c1">// Then clear again and wait shortly</span>
-  <span class="n">clearOutputs</span><span class="p">();</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="c1">// The expected byte is an ASCII character in the range of [0, 255]</span>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// If no new information, do nothing</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="k">return</span><span class="p">;</span>
+  <span class="c1">// Else, read a single byte and format it as ...</span>
+  <span class="c1">// type (_t) &quot;unsigned (u) integer (int) of 8 (8) bits&quot; = uint8_t</span>
+  <span class="kt">uint8_t</span> <span class="n">inChar</span> <span class="o">=</span> <span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>This part of the firmware sets the data, then delays by a bit, and then resets to <code class="docutils literal notranslate"><span class="pre">0</span></code>.
