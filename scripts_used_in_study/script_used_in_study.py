@@ -3,9 +3,10 @@
 
 Required packages:
 
-- numpy
-- pylsl
+- numpy (https://pypi.org/project/numpy/)
 - psychtoolbox (https://pypi.org/project/psychtoolbox/)
+- pylsl (https://pypi.org/project/pylsl/)
+- pyparallel (https://pypi.org/project/pyparallel/)
 
 """
 
@@ -47,7 +48,8 @@ elif port == 'labjack':
 
 else:
     # serial port
-    ser, _ = ptb.IOPort('OpenSerialPort', port, 'BaudRate=115200 FlowControl=None ReceiveTimeout=0.05')
+    ser, _ = ptb.IOPort('OpenSerialPort', port,
+                        'BaudRate=115200 FlowControl=None ReceiveTimeout=0.05')
 
     def send_trigger():
         ptb.IOPort('Write', ser, '\x01')
@@ -65,7 +67,10 @@ outlet = pylsl.StreamOutlet(
 
 # Get the psychHID index for the emulated keyboard
 try:
-    kbdidx = next((dev['index'] for dev in ptb.PsychHID('devices', 4) if dev['product'].startswith('Teensyduino')))
+    kbdidx = next(
+        (dev['index'] for dev in ptb.PsychHID('devices', 4)
+         if dev['product'].startswith('Teensyduino'))
+    )
 except StopIteration:
     kbdidx = 0
 
@@ -81,7 +86,9 @@ pylsl.local_clock()
 ptb.GetSecs()
 
 # Make sure LSL and PTB use the same underlying clock
-timediff = abs(pylsl.local_clock()-ptb.GetSecs()+ptb.GetSecs()-pylsl.local_clock())
+timediff = abs(
+    pylsl.local_clock()-ptb.GetSecs()+ptb.GetSecs()-pylsl.local_clock()
+)
 assert(timediff < 1e-3)
 
 while True:
