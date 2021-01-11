@@ -1,3 +1,12 @@
+/*
+Device firmware for a USB trigger box (Appelhoff & Stenner, 2021).
+
+MIT License
+
+Copyright 2021 Stefan Appelhoff, Tristan Stenner
+
+*/
+
 #include "Arduino.h";
 // the following pin numbers depend on where you actually put the wires on your device
 const int outputPins[] = {2,3,4,5,6,7,8,9};

@@ -1,4 +1,3 @@
-[![licensebuttonsby](https://licensebuttons.net/l/by/3.0/88x31.png)](https://creativecommons.org/licenses/by/4.0)
 [![Ask Me Anything!](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/sappelhoff/usb-to-ttl/issues/new)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3838692.svg)](https://doi.org/10.5281/zenodo.3838692)
 
@@ -15,6 +14,12 @@ Published with the help of:
  - [sphinx-bootstrap-theme](https://github.com/ryan-roemer/sphinx-bootstrap-theme)
  - [CircleCI](https://circleci.com/blog/deploying-documentation-to-github-pages-with-continuous-integration/) (link to build guide)
  - [GitHub Pages](https://pages.github.com/)
+
+# License
+
+[![licensebuttonsby](https://licensebuttons.net/l/by/3.0/88x31.png)](https://creativecommons.org/licenses/by/4.0)
+
+Unless otherwise noted, all contents of this repository that were created by Stefan Appelhoff and Tristan Stenner are released under the CC BY 4.0 license.
 
 # Build instructions
 

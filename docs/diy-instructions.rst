@@ -93,6 +93,6 @@ Firmware
 This is the firmware that should be uploaded to the microcontroller.
 Take care to define the ``outputPins`` according to how you connected your wires.
 
-.. literalinclude:: ../firmware.ino
+.. literalinclude:: ../scripts/commented_firmware.ino
    :language: C
    :linenos:
