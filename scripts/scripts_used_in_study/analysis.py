@@ -1,4 +1,4 @@
-"""Analyze data for "In COM We Trust: Feasability of USB Based Event Marking".
+"""Analyze data for "In COM We Trust: Feasibility of USB-Based Event Marking".
 
 Expects the following data files in a /data directory nested in the
 working directory
