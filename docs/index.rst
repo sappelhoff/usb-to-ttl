@@ -3,11 +3,11 @@ usb-to-ttl
 
 This website contains supplementary material to the article **"In COM We Trust: Feasibility of USB-Based Event Marking"**, by Stefan Appelhoff |ORCID_appelhoff| and Tristan Stenner |ORCID_stenner|.
 
-A preprint is available on PsyArXiv: link-to-be-done
+A preprint is available on PsyArXiv: `doi:10.31234/osf.io/x5dnb <https://doi.org/10.31234/osf.io/x5dnb>`_
 
 Please feel free to open a `new GitHub issue`_ for any questions, suggestions, or comments you might have.
 
-The source for this website is persistently stored on Zenodo (`https://doi.org/10.5281/zenodo.3838692 <https://doi.org/10.5281/zenodo.3838692>`_) and can be used to build the website locally (see ``README.md`` file at the root of the archive).
+The source for this website is persistently stored on Zenodo (`doi:10.5281/zenodo.3838692 <https://doi.org/10.5281/zenodo.3838692>`_) and can be used to build the website locally (see ``README.md`` file at the root of the archive).
 
 .. |ORCID_appelhoff| image:: _static/orcid_16x16.png
                      :target: https://orcid.org/0000-0001-8002-0877
