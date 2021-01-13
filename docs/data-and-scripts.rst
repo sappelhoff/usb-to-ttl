@@ -7,17 +7,24 @@ Data and analysis scripts from the article
 
 .. note:: This part of the documentation will be updated once the preprint it out: **"In COM we trust: feasibility of USB based event marking"**
 
+Preprint
+^^^^^^^^
+
+The preprint of "In COM We Trust: Feasibility of USB-Based Event Marking" is available on PsyArXiv: link-to-be-done
+
 Data
 ^^^^
 
-Will be available from Zenodo.
+The data is permanently archived on Zenodo and available via this DOI: `doi:10.5281/zenodo.3838621 <https://doi.org/10.5281/zenodo.3838621>`_
 
 Analysis script
 ^^^^^^^^^^^^^^^
 
-Will be available from this page soon.
+This Python script was used for data analysis.
 
--  analysis.py
+.. literalinclude:: ../scripts/scripts_used_in_study/analysis.py
+   :language: Python
+   :linenos:
 
 Firmware used on device during study
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
