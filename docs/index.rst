@@ -1,9 +1,9 @@
 usb-to-ttl
 ==========
 
-This website contains supplementary material to the article **"In COM we trust: feasibility of USB based event marking"**, by Stefan Appelhoff |ORCID_appelhoff| and Tristan Stenner |ORCID_stenner|.
+This website contains supplementary material to the article **"In COM We Trust: Feasibility of USB-Based Event Marking"**, by Stefan Appelhoff |ORCID_appelhoff| and Tristan Stenner |ORCID_stenner|.
 
-A preprint will be available soon.
+A preprint is available on PsyArXiv: link-to-be-done
 
 Please feel free to open a `new GitHub issue`_ for any questions, suggestions, or comments you might have.
 
@@ -31,7 +31,7 @@ Replacements of the parallel port interface are needed to make sure that all the
 
 One such replacement is relay output data via USB to a dedicated microcontroller unit (e.g., an `Arduino`_ or a `Teensy`_), which then converts the incoming data into a parallel signal, and sends it on to its destination.
 
-In our article, **"In COM we trust: feasibility of USB based event marking"**, we show the feasibility of such an approach through a direct comparison of USB based event marking with the parallel port.
+In our article, **"In COM We Trust: Feasibility of USB-Based Event Marking"**, we show the feasibility of such an approach through a direct comparison of USB based event marking with the parallel port.
 On this website we showcase supplementary material.
 
 Supplementary Material
@@ -40,7 +40,7 @@ Supplementary Material
 :ref:`data-and-scripts`
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The data used in the article **"In COM we trust: feasibility of USB based event marking"** as well as the analysis scripts are supplied.
+The data used in the article **"In COM We Trust: Feasibility of USB-Based Event Marking"** as well as the analysis scripts are supplied.
 Additionally, we provide code to reproduce the figures used in the article.
 
 :ref:`diy-instructions`
