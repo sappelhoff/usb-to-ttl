@@ -26,5 +26,25 @@
     "eeg"
   ],
   "license": "CC-BY-4.0",
-  "upload_type": "other"
+  "upload_type": "other",
+  "access_right": "open",
+  "language": "eng",
+  "related_identifiers": [
+        {
+          "scheme": "url",
+          "identifier": "https://github.com/sappelhoff/usb-to-ttl",
+          "relation": "isSupplementTo"
+      },
+      {
+          "scheme": "doi",
+          "identifier": "10.31234/osf.io/x5dnb",
+          "relation": "isSupplementTo"
+      },
+      {
+          "scheme": "doi",
+          "identifier": "10.5281/zenodo.3838621",
+          "relation": "cites"
+      }
+  ]
+
 }
