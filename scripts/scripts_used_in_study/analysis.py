@@ -22,11 +22,7 @@ working directory
 Will produce the following outputs in a new directory "analysis_outputs":
 
 - figure2_raincloud.png
-- anova_results.csv
-- anova_pairwise_ttests_results.csv
-- os_diff_results.txt
-- summary_table.csv
-- exclusion_criteria.txt
+- figure2_raincloud.pdf
 
 Python requirements:
 
@@ -36,7 +32,6 @@ Python requirements:
 - matplotlib >= 3.0.2
 - seaborn == 0.10.1
 - ptitprince == 0.2.4
-- pingouin == 0.3.8
 
 It is recommended to run this script in an isolated environment,
 for example by using conda (https://docs.conda.io/en/latest/miniconda.html).
@@ -45,7 +40,7 @@ commands to create a suitable environment for running `analysis.py`:
 
 - conda create -n usb_to_ttl Python=3.8 numpy pandas matplotlib --yes
 - conda activate usb_to_ttl
-- pip install seaborn==0.10.1 pingouin==0.3.8 ptitprince==0.2.4
+- pip install seaborn==0.10.1 ptitprince==0.2.4
 
 And then run:
 
@@ -58,7 +53,6 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import pingouin
 import ptitprince
 import seaborn as sns
 
@@ -88,15 +82,14 @@ def read_data(fnames):
         # Drop all rows where latency_ms was not measured
         df = df[~df["latency_ms"].isna()]
 
-        # add more information
+        # Add more information
         opsys = fname.split("-")[1]
         device = fname.split("-")[2][:3]
-        df["channel"] = df["channel"].map({"Analog 0": "kbd", "Analog 2": device})
+        df["device"] = df["channel"].map({"Analog 0": "kbd", "Analog 2": device})
         df["os"] = opsys
-        df["meas"] = "{}-{}".format(opsys, device)
-        df["drop"] = False
+        df["meas"] = f"{opsys}-{device}"
 
-        # drop the event column because it's meaningless in this circumstance
+        # Drop the event column because it's meaningless in this circumstance
         df = df.drop(columns="event")
 
         # Each group of unique time_s measurements gets an index
@@ -108,9 +101,29 @@ def read_data(fnames):
 
         dfs.append(df)
 
-    # concatenate all data frames and reset the pandas index
+    # Concatenate all data frames and reset the pandas index
     df = pd.concat(dfs, join="inner")
     df = df.reset_index(drop=True)
+
+    # Map abbreviations to full names
+    if set(["lin", "win"]) == set(df["os"].unique()):
+        df["os"] = df["os"].map({"lin": "Linux", "win": "Windows"})
+
+    if set(["kbd", "par", "leo", "uno", "t32", "tlc", "lu3", "ljr"]) == set(
+        df["device"].unique()
+    ):
+        df["device"] = df["device"].map(
+            {
+                "kbd": "Teensy 3.2 Keyboard",
+                "par": "Parallel Port",
+                "leo": "Arduino Leonardo",
+                "uno": "Arduino Uno",
+                "t32": "Teensy 3.2",
+                "tlc": "Teensy LC",
+                "ljr": "LabJack U3 (writeRegister)",
+                "lu3": "LabJack U3 (setFIOState)",
+            }
+        )
 
     return df
 
@@ -118,7 +131,7 @@ def read_data(fnames):
 # %% Function to preprocess data
 
 
-def preprocess_data(df, max_uncertainty, min_latency, n_first_measurements):
+def preprocess_data(df, max_uncertainty, n_first_measurements):
     """Preprocess the data.
 
     Parameters
@@ -128,13 +141,8 @@ def preprocess_data(df, max_uncertainty, min_latency, n_first_measurements):
     max_uncertainty : float
         Maximum acceptable network uncertainty in milliseconds.
         All rows in `df` with higher uncertainty will be dropped.
-    min_latency : float
-        Minimum acceptable latency in milliseconds for all channels
-        except the keyboard. Rows that are not corresponding
-        to the keyboard channel and have a lower latency are marked
-        as erroneous and dropped.
     n_first_measurements : int
-
+        The number of first valid measurements to select.
 
     Returns
     -------
@@ -142,15 +150,38 @@ def preprocess_data(df, max_uncertainty, min_latency, n_first_measurements):
         The preprocessed input data, changed inplace.
 
     """
-    # drop rows where network uncertainty is too high
+    # Drop rows where network uncertainty is too high
+    #
+    # When the LabStreamer detects a TTL trigger at timepoint tTTL,
+    # it calculates the delay between the last LSL trigger based on the timestamp tLSL
+    # (reported by the stimulus PC) and converts this timestamp to its own
+    # clock by subtracting the estimated clock offset Δt.
+    # The TTL latency is then calculated as tTTL-(tLSL-Δt).
+    # Measurement errors of the estimated clock offset are therefore reflected
+    # in the calculated trigger latency,
+    # but are not indicative of errors in the trigger latency tTTL
     df = df[df["network_unc_ms"] <= max_uncertainty]
 
-    # drop rows where the latency is erroneously low
-    df = df[~((df["latency_ms"] < min_latency) & (df["channel"] != "kbd"))]
+    # Drop rows where the latency is erroneously low
+    #
+    # The LabStreamer has a sampling rate of 10kHz and detects events as the
+    # first sample above the threshold in the configured interval relative to
+    # the LSL trigger.
+    # Sometimes, the keyboard input received by the data collection script
+    # was duplicated after ~2ms and the (still active; as the outputs are set
+    # to high for 5ms) TTL trigger was attributed to the second event with a
+    # latency of less then one sample (0.1ms @ 10kHz).
+    df = df[~((df["latency_ms"] < 0.1) & (df["device"] != "Teensy 3.2 Keyboard"))]
 
-    # drop measurement indices that do not consist of two rows
+    # Drop measurement indices that do not consist of two rows
     # (one for keyboard, and one for device)
-    df = df.groupby(["meas", "idx"]).filter(lambda x: x["latency_ms"].count() == 2)
+    # equivalent to the following line:
+    # df = df.groupby(["meas", "idx"]).filter(lambda x: x["latency_ms"].count() == 2)
+    df_idx_count = pd.DataFrame(df.groupby("meas")["idx"].value_counts())
+    df_idx_count = df_idx_count.rename({"idx": "idx_count"}, axis=1).reset_index()
+    df = df.merge(df_idx_count, on=["meas", "idx"])
+    df = df[df["idx_count"] == 2]
+    df = df.drop(columns=["idx_count"])
 
     # Make a new continuous index based on clean data
     tmps = list()
@@ -170,29 +201,18 @@ def preprocess_data(df, max_uncertainty, min_latency, n_first_measurements):
 
     df = df.merge(tmp, on=["meas", "idx"], validate="many_to_one")
 
-    # select only the n_first_measurements
+    # Select only the n_first_measurements
     df = df[df["i"] < n_first_measurements]
 
-    # save exclusion criteria
-    fname = "exclusion_criteria.txt"
-    fname = os.path.join(OUTDIR, fname)
-    with open(fname, "w") as fout:
-        print(
-            f"MAX_UNCERTAINTY: {max_uncertainty}\n"
-            f"MIN_LATENCY: {min_latency}\n"
-            f"N_FIRST_MEASUREMENTS: {n_first_measurements}",
-            file=fout,
-        )
-
-    # sort and return
-    df = df[["meas", "os", "channel", "i", "latency_ms"]]
-    df = df.sort_values(by=["os", "channel", "i"])
+    # Sort and return
+    df = df[["meas", "os", "device", "i", "latency_ms"]]
+    df = df.sort_values(by=["os", "device", "i"])
     return df
 
 
 # %% Define constants for the analysis
 
-# paths to the data files
+# Paths to the data files
 FNAMES = [
     os.path.join("data", "NLS-win-leo.txt.gz"),
     os.path.join("data", "NLS-win-ljr.txt.gz"),
@@ -210,66 +230,72 @@ FNAMES = [
     os.path.join("data", "NLS-lin-uno.txt.gz"),
 ]
 
-# parameters for `preprocess_data` (see docstring)
+# Parameters for `preprocess_data` (see docstring)
 MAX_UNCERTAINTY = 0.01
-MIN_LATENCY = 0.1
 N_FIRST_MEASUREMENTS = 2500
 
-# for plotting
+# Settings for plotting
 LETTER_WIDTH_INCH = 8.5
 sns.set_style("whitegrid")
 
-# create output directory for analysis
+# Create output directory for analysis
 OUTDIR = "analysis_outputs"
 os.makedirs(OUTDIR, exist_ok=True)
 
-# %% Read and preprocess the data
+# %% Read the data
 
 df = read_data(FNAMES)
 
-# Number of measurements per MCU & operating system
-# excluding the keyboard and parallel port
-min_measurements, max_measurements = (
-    df.groupby(["channel", "os"])
-    .count()
-    .drop(["kbd"])["time_s"]
-    .describe()[["min", "max"]]
-    .to_numpy()
-    .astype(int)
+# Contingency table of measurements
+table_recorded = pd.crosstab(
+    index=pd.Categorical(df["os"], categories=sorted(df["os"].unique())),
+    columns=pd.Categorical(df["device"], categories=sorted(df["device"].unique())),
+    dropna=False,
 )
+
+# Drop keyboard, because it is measured for each device, ...
+# and thus contains all other columns
+table_recorded.index.name = "os"
+table_recorded.columns.name = "device"
+table_recorded.drop(columns=["Teensy 3.2 Keyboard"], inplace=True)
+
+min_measurements = np.min(table_recorded.min())
+max_measurements = np.max(table_recorded.max())
 
 print(f"Min and max number of measurements: {min_measurements}, {max_measurements}")
 
-# %%
-df = preprocess_data(df, MAX_UNCERTAINTY, MIN_LATENCY, N_FIRST_MEASUREMENTS)
-
+print("\nTable of recorded measurements:")
 try:
-    display(df.head())
+    display(table_recorded.head())
 except NameError:
-    print(df.head())
+    print(table_recorded.head())
 
+# Contingency table of dropped measurements
+dropped = df[df["network_unc_ms"] > MAX_UNCERTAINTY]
+
+table_dropped = pd.crosstab(
+    index=pd.Categorical(dropped["os"], categories=sorted(df["os"].unique())),
+    columns=pd.Categorical(dropped["device"], categories=sorted(df["device"].unique())),
+    dropna=False,
+)
+
+# Again, drop keyboard because it is measured for each device, ...
+#  and thus contains all other columns
+table_dropped.index.name = "os"
+table_dropped.columns.name = "device"
+table_dropped.drop(columns=["Teensy 3.2 Keyboard"], inplace=True)
+
+print(f"\nTable of dropped measurements (uncertainty > {MAX_UNCERTAINTY}):")
+try:
+    display(table_dropped.head())
+except NameError:
+    print(table_dropped.head())
+
+# %% Preprocess data
+
+df = preprocess_data(df, MAX_UNCERTAINTY, N_FIRST_MEASUREMENTS)
 
 # %% Produce data summary table
-
-# Map abbreviations to full names
-if set(["lin", "win"]) == set(df["os"].unique()):
-    df["os"] = df["os"].map({"lin": "Linux", "win": "Windows"})
-
-if set(["kbd", "par", "leo", "uno", "t32", "tlc", "lu3", "ljr"]) == set(
-    df["channel"].unique()
-):
-    df["channel"] = df["channel"].map(
-        {
-            "kbd": "Teensy 3.2 Keyboard",
-            "par": "Parallel Port",
-            "leo": "Arduino Leonardo",
-            "uno": "Arduino Uno",
-            "t32": "Teensy 3.2",
-            "tlc": "Teensy LC",
-            "ljr": "LabJack U3 (writeRegister)",
-            "lu3": "LabJack U3 (setFIOState)",
-        }
-    )
 
 
 def iqr(x):
@@ -278,7 +304,7 @@ def iqr(x):
 
 
 table = (
-    df.groupby(["channel", "os"])
+    df.groupby(["device", "os"])
     .agg(
         {
             "latency_ms": [np.mean, np.std, np.median, iqr],
@@ -286,11 +312,6 @@ table = (
     )
     .reset_index()
 )
-
-try:
-    display(table)
-except NameError:
-    print(table)
 
 
 # %% Map multiindex of table to single index
@@ -316,26 +337,19 @@ copy = table.copy()
 copy = copy[
     [
         "os",
-        "channel",
+        "device",
         "latency-ms-mean",
         "latency-ms-std",
         "latency-ms-median",
         "latency-ms-iqr",
     ]
 ]
-copy.columns = ["Operating System", "Device", "Mean", "Std", "Median", "IQR"]
+copy.columns = ["Operating System", "Device", "Mean", "SD", "Median", "IQR"]
 
-# Make combined mean+-std column
+# Round, drop unneeded columns from copy and sort
 copy = copy.round(3)
-combined_mean_std_col = [
-    f"{mean} ± {str(std).ljust(5, '0')}"
-    for mean, std in zip(copy["Mean"].to_list(), copy["Std"].to_list())
-]
-copy["Mean ± Std"] = combined_mean_std_col
-
-# Drop unneeded columns from copy and sort
-copy = copy[["Operating System", "Device", "Mean ± Std", "Median", "IQR"]]
-copy = copy.sort_values(by=["Operating System", "Device"])
+copy = copy[["Operating System", "Device", "Mean", "SD", "Median", "IQR"]]
+copy = copy.sort_values(by=["Operating System", "Mean"])
 
 try:
     display(copy.style.hide_index())
@@ -344,19 +358,16 @@ except NameError:
     print(table.round(3).to_string(index=False, justify="center"))
 
 
-fname = "summary_table.csv"
-fname = os.path.join(OUTDIR, fname)
-table.round(3).to_csv(fname, index=False)
-
 # %% Settings for plotting
 
-# Set plotting order
-order = table.groupby("channel").min().sort_values("latency-ms-mean").index.to_list()
-print(f"plotting in order: {order}")
+# Remove keyboard, we are not plotting it, and not using it for summary stats
+df = df[df["device"] != "Teensy 3.2 Keyboard"]
+print("\nDropped 'Teensy 3.2 Keyboard' from data.")
 
-# Remove keyboard, we are not plotting it, and not entering it into the ANOVA
+# Set plotting order
+order = table.groupby("device").min().sort_values("latency-ms-mean").index.to_list()
 order.remove("Teensy 3.2 Keyboard")
-df = df[df["channel"] != "Teensy 3.2 Keyboard"]
+print(f"\nplotting in order: {order}")
 
 # y-axis label settings
 ylabel_map = dict(zip(order, ["\n".join(device.split(" ")) for device in order]))
@@ -371,15 +382,16 @@ with sns.plotting_context("paper", font_scale=1.3):
     palette = "colorblind"
 
     ptitprince.half_violinplot(
-        x="channel",
+        x="device",
+        order=order,
         y="latency_ms",
         hue="os",
+        hue_order=["Linux", "Windows"],
         data=df,
         ax=ax,
         palette=palette,
         split=True,
         inner=None,
-        order=order,
         offset=0.3,
     )
 
@@ -387,15 +399,16 @@ with sns.plotting_context("paper", font_scale=1.3):
         i.set_alpha(0.65)
 
     sns.stripplot(
-        x="channel",
+        x="device",
+        order=order,
         y="latency_ms",
         hue="os",
+        hue_order=["Linux", "Windows"],
         data=df,
         ax=ax,
         palette=palette,
         alpha=0.1,
         size=1,
-        order=order,
         zorder=0,
         jitter=1,
         dodge=True,
@@ -403,9 +416,11 @@ with sns.plotting_context("paper", font_scale=1.3):
     )
 
     sns.boxplot(
-        x="channel",
+        x="device",
+        order=order,
         y="latency_ms",
         hue="os",
+        hue_order=["Linux", "Windows"],
         data=df,
         ax=ax,
         palette=palette,
@@ -418,7 +433,6 @@ with sns.plotting_context("paper", font_scale=1.3):
         showfliers=True,
         whiskerprops={"linewidth": 2, "zorder": 10},
         saturation=0.75,
-        order=order,
     )
 
     xlim = ax.get_xlim()
@@ -427,15 +441,39 @@ with sns.plotting_context("paper", font_scale=1.3):
     ax.set_xticklabels(ylabels)
     ax.set_xlabel("Device", labelpad=25)
 
-    # Use log scale
-    ax.set_yscale("log", base=10)
-    yticks = [0.1, 0.25, 0.5, 1, 2.5, 5, 10]
-    ax.set_yticks(yticks)
-    ax.set_yticklabels([f"{i:2.2f} ms" for i in yticks])
+    # Limit the extent of the y axis, which makes data non-visible, ...
+    # so add a big outlier marker (red star) for that to mention in the caption
+    upper_ylim = 2.1
+    ax.set_ylim((0.0, upper_ylim))
+    text_pos = 0.5
+    outlier_text_obj = ax.text(
+        x=text_pos,
+        y=1.0,
+        s="*",
+        color="red",
+        transform=ax.transAxes,
+        ha="center",
+        fontsize=20,
+    )
 
-    ax.set_ylim((0.1, None))
-    ax.set_ylabel("Latency (log10 scale)")
+    # Sanity check we did not cut any other outliers
+    outliers = df[df["latency_ms"] >= upper_ylim].reset_index(drop=True)
+    assert outliers["meas"].nunique() == 1
 
+    # Sanity check we make the star in the correct position (in the middle)
+    assert len(order) == 7
+    assert order[3] == "LabJack U3 (writeRegister)"
+    assert text_pos == 0.5
+
+    # Print short report
+    print(
+        f"{outliers.shape[0]} outliers not shown for {outliers['meas'][0]}. "
+        f"Ranging from {outliers['latency_ms'].min().round(1)} to "
+        f"{outliers['latency_ms'].max().round(1)} ms "
+        f"(mean: {outliers['latency_ms'].mean().round(1)} ms)"
+    )
+
+    ax.set_ylabel("Latency (ms)")
     ax.grid(b=True, which="major", axis="y")
 
     # Get the handles and labels. For this example it'll be 2 tuples
@@ -453,89 +491,44 @@ with sns.plotting_context("paper", font_scale=1.3):
         fname = f"figure2_raincloud.{ext}"
         fname = os.path.join(OUTDIR, fname)
         fig.tight_layout()
-        dpi = 1200 if ext == "png" else None
-        plt.savefig(fname, dpi=dpi)
+        dpi = 600 if ext == "png" else None
+        plt.savefig(fname, dpi=dpi, bbox_extra_artists=(outlier_text_obj,))
 
-# %% Run ANOVA
+# %% Calculate summary statistics between OS
 
-# latency_ms ~ os*channel
-model = pingouin.anova(
-    data=df,
-    dv="latency_ms",
-    between=["os", "channel"],
-    ss_type=2,
-    detailed=True,
+# Drop the LabJack U3 from this comparison, as it's an outlier
+df = df[~df["device"].str.startswith("LabJack")]
+
+# Guarantee that Linux is listed before Windows, to later have the appropriate diff
+df = df.sort_values(by=["os", "device", "i"])
+
+df_os = pd.pivot_table(
+    df, values="latency_ms", index="os", aggfunc=[np.mean, np.std, np.median, iqr]
 )
+df_os.loc["Windows - Linux", :] = np.diff(df_os.to_numpy(), axis=0)
 
-# for p-unc values of 0.0 it means that
-# # scipy.stats.f(df, df_resid).sf(f_val) returned 0,
-# which means that the p-value is very low indeed <<< 0.0001
-for col in ["p-unc"]:
-    model[col] = [
-        str(i).replace("0.0", "<0.0001") if i == 0.0 else i
-        for i in model[col].to_list()
+try:
+    display(df_os.round(3))
+except NameError:
+    print(df_os.round(3))
+
+# %% Where is the OS effect strongest?
+
+# exclude LabJack U3 as an outlier
+# exclude parallel port, gets mentioned in the text anyhow
+print("Effect of OS (Windows - Linux) on latency in ms\n")
+print(
+    table[
+        ~table["device"].isin(
+            [
+                "Teensy 3.2 Keyboard",
+                "Parallel Port",
+                "LabJack U3 (writeRegister)",
+                "LabJack U3 (setFIOState)",
+            ]
+        )
     ]
-
-try:
-    display(model)
-except NameError:
-    print(model)
-
-# Save ANOVA results
-fname = "anova_results.csv"
-fname = os.path.join(OUTDIR, fname)
-model.to_csv(fname, index=False)
-
-
-# %% Print time difference between operating systems in milliseconds
-first = "Windows"
-second = "Linux"
-os_diff = (
-    df.groupby("os")["latency_ms"].mean()[first]
-    - df.groupby("os")["latency_ms"].mean()[second]
+    .groupby("device")["latency-ms-mean"]
+    .agg(np.diff)
+    .sort_values()
 )
-print(np.round(os_diff, 3))
-
-ttest_results = pingouin.ttest(
-    df[df["os"] == first]["latency_ms"],
-    df[df["os"] == second]["latency_ms"],
-    paired=True,
-)
-
-try:
-    display(ttest_results)
-except NameError:
-    print(ttest_results)
-
-
-fname = "os_diff_results.txt"
-fname = os.path.join(OUTDIR, fname)
-with open(fname, "w") as fout:
-    print(f"Difference between operating systems: {os_diff:.3f}ms", file=fout)
-    print(f"({first} minus {second})", file=fout)
-    print(ttest_results.to_string(), file=fout)
-
-
-# %% Perform pairwise comparisons between the channels and operating systems
-stats = pingouin.pairwise_ttests(
-    data=df, dv="latency_ms", between=["os", "channel"], padjust="bonf"
-)
-
-# again, p of 0 means p < 0.0001 (see above)
-for col in ["p-unc", "p-corr"]:
-    stats[col] = [
-        str(i).replace("0.0", "<0.0001") if i == 0.0 else i
-        for i in stats[col].to_list()
-    ]
-
-try:
-    display(stats)
-except NameError:
-    print(stats)
-
-# Save pairwise results
-fname = "anova_pairwise_ttests_results.csv"
-fname = os.path.join(OUTDIR, fname)
-stats.to_csv(fname, index=False)
-
-# %%
