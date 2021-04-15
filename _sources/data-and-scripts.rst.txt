@@ -5,10 +5,10 @@
 Data and analysis scripts from the article
 ==========================================
 
-Preprint
-^^^^^^^^
+Article
+^^^^^^^
 
-The preprint of "In COM We Trust: Feasibility of USB-Based Event Marking" is available on PsyArXiv: `doi:10.31234/osf.io/x5dnb <https://doi.org/10.31234/osf.io/x5dnb>`_
+The article "In COM we trust: Feasibility of USB-based event marking" is available with open access from Behavior Research Methods: `doi:10.3758/s13428-021-01571-z <https://doi.org/10.3758/s13428-021-01571-z>`_
 
 Data
 ^^^^

@@ -1,9 +1,9 @@
 usb-to-ttl
 ==========
 
-This website contains supplementary material to the article **"In COM We Trust: Feasibility of USB-Based Event Marking"**, by Stefan Appelhoff |ORCID_appelhoff| and Tristan Stenner |ORCID_stenner|.
+This website contains supplementary material to the article **"In COM we trust: Feasibility of USB-based event marking"**, by Stefan Appelhoff |ORCID_appelhoff| and Tristan Stenner |ORCID_stenner|.
 
-A preprint is available on PsyArXiv: `doi:10.31234/osf.io/x5dnb <https://doi.org/10.31234/osf.io/x5dnb>`_
+The article is available with open access from Behavior Research Methods: `doi:10.3758/s13428-021-01571-z <https://doi.org/10.3758/s13428-021-01571-z>`_
 
 Please feel free to open a `new GitHub issue`_ for any questions, suggestions, or comments you might have.
 
@@ -40,7 +40,7 @@ Supplementary Material
 :ref:`data-and-scripts`
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The data used in the article **"In COM We Trust: Feasibility of USB-Based Event Marking"** as well as the analysis scripts are supplied.
+The data used in the article **"In COM we trust: Feasibility of USB-based event marking"** as well as the analysis scripts are supplied.
 Additionally, we provide code to reproduce the figures used in the article.
 
 :ref:`diy-instructions`
