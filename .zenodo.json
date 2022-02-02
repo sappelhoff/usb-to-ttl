@@ -30,21 +30,29 @@
   "access_right": "open",
   "language": "eng",
   "related_identifiers": [
-        {
-          "scheme": "url",
-          "identifier": "https://github.com/sappelhoff/usb-to-ttl",
-          "relation": "isSupplementTo"
-      },
-      {
-          "scheme": "doi",
-          "identifier": "10.31234/osf.io/x5dnb",
-          "relation": "isSupplementTo"
-      },
-      {
-          "scheme": "doi",
-          "identifier": "10.5281/zenodo.3838621",
-          "relation": "cites"
-      }
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/sappelhoff/usb-to-ttl",
+      "relation": "isSupplementTo",
+      "resource_type": "other"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.31234/osf.io/x5dnb",
+      "relation": "isSupplementTo",
+      "resource_type": "preprint"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.3758/s13428-021-01571-z",
+      "relation": "isSupplementTo",
+      "resource_type": "article"
+    },    
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.3838621",
+      "relation": "cites",
+      "resource_type": "dataset"
+    }
   ]
-
 }
