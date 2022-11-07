@@ -1,0 +1,57 @@
+# YAML 1.2
+---
+# Metadata for citation of this software according to the CFF format (https://citation-file-format.github.io/)
+cff-version: 1.2.0
+title: 'USB-to-TTL'
+abstract: 'This repository contains the source code for the `usb-to-ttl` documentation page, hostet at <a href=\"https://sappelhoff.github.io/usb-to-ttl\">https://sappelhoff.github.io/usb-to-ttl</a>. Alternatively, see the README file for instructions to build the documentation locally.'
+authors:
+    - given-names: Stefan
+      family-names: Appelhoff
+      affiliation: 'Center for Adaptive Rationality, Max Planck Institute for Human Development, Berlin, Germany'
+      orcid: 'https://orcid.org/0000-0001-8002-0877'
+    - given-names: Tristan
+      family-names: Stenner
+      affiliation: 'Institute of Medical Psychology and Medical Sociology, University Medical Center Schleswig Holstein, Kiel University, Kiel, Germany'
+      orcid: 'https://orcid.org/0000-0002-2428-9051'
+type: software
+repository-code: 'https://github.com/sappelhoff/usb-to-ttl'
+license: CC-BY-4.0
+keywords:
+  - parallel port
+  - arduino
+  - teensy
+  - trigger
+  - event
+  - marker
+  - magnetoencephalography
+  - meg
+  - electroencephalography
+  - eeg
+message: >-
+  Please cite this software using the metadata from
+  'preferred-citation' in the CITATION.cff file.
+preferred-citation:
+  title: >-
+    In COM we trust: Feasibility of USB-based event marking
+  journal: Behavior Research Methodss
+  type: article
+  year: 2021
+  volume: 53
+  issue: 6
+  start: 2450
+  end: 2455
+  doi: 10.3758/s13428-021-01571-z
+  authors:
+    - given-names: Stefan
+      family-names: Appelhoff
+      affiliation: 'Center for Adaptive Rationality, Max Planck Institute for Human Development, Berlin, Germany'
+      orcid: 'https://orcid.org/0000-0001-8002-0877'
+    - given-names: Tristan
+      family-names: Stenner
+      affiliation: 'Institute of Medical Psychology and Medical Sociology, University Medical Center Schleswig Holstein, Kiel University, Kiel, Germany'
+      orcid: 'https://orcid.org/0000-0002-2428-9051'
+identifiers:
+  - description: "Code archive on Zenodo"
+    type: doi
+    value: 10.5281/zenodo.3838692
+...
