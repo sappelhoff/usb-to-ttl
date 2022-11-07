@@ -30,7 +30,7 @@ To find the items, simply type in the "item number" on the Reichelt shop website
 | 25 pole flat ribbon cable     | 9.07           | AWG 28-25F 3M                  |
 +-------------------------------+----------------+--------------------------------+
 
-.. figure:: ./_static/step0.jpg
+.. figure:: ./_static/materials.jpg
    :width: 400px
    :height: 300px
    :align: center
@@ -44,7 +44,7 @@ Build instructions
 Step 1
 ^^^^^^
 
-.. figure:: ./_static/step1.jpg
+.. figure:: ./_static/db25_cables.jpg
    :width: 1200
    :height: 300
    :align: center
@@ -55,29 +55,46 @@ Step 1
 Step 2
 ^^^^^^
 
-.. figure:: ./_static/step2.jpg
+.. figure:: ./_static/parport.jpg
+   :width: 1160
+   :height: 656
+   :align: center
+   :alt: schematic of the pins in the db 25 connector
+
+   In the db 25 connector, pins 2-9 (8 pins in total) are for data.
+   Pick any pin from 18-25 for the ground.
+
+Step 3
+^^^^^^
+
+.. figure:: ./_static/prep_wires.jpg
    :width: 1200
    :height: 600
    :align: center
    :alt: photograph of preparing the wires for the terminals
 
    Preparing the wires for putting them into the spring-loaded terminals.
+   Pick those leading to pins 2-9 for data, and one leading to any pin
+   from 18-25 for the ground.
 
-Step 3
+Step 4
 ^^^^^^
 
-.. figure:: ./_static/step3.jpg
+.. figure:: ./_static/cables_arduino.jpg
    :width: 800
    :height: 600
    :align: center
    :alt: photograph of connecting wires with the terminals
 
    Connecting the wires with the spring-loaded terminals attached to the Arduino Leonardo.
+   For simplicity, connect pins 2-9 from the db 25 connector to pins 2-9 on the Arduino.
+   Connect the ground from the db 25 connector (any pin from 18-25) to the ground pin
+   on the Arduino.
 
-Step 4
+Step 5
 ^^^^^^
 
-.. figure:: ./_static/step4.jpg
+.. figure:: ./_static/finished_lpt.jpg
    :width: 400px
    :height: 300px
    :align: center
@@ -91,7 +108,12 @@ Firmware
 --------
 
 This is the firmware that should be uploaded to the microcontroller.
-Take care to define the ``outputPins`` according to how you connected your wires.
+For uploading the firmware to the Arduino, please consult one of the abundant
+tutorials in the
+`Arduino documentation <https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-uploading-a-sketch>`_.
+
+Take care to define the ``outputPins`` according to how you connected your wires
+(if you followed the instructions above, this will already be the case).
 
 .. literalinclude:: ../scripts/commented_firmware.ino
    :language: C
