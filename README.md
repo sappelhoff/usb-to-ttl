@@ -1,5 +1,6 @@
 [![Ask Me Anything!](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/sappelhoff/usb-to-ttl/issues/new)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3838692.svg)](https://doi.org/10.5281/zenodo.3838692)
+[![Behavior Reseach Methods](https://img.shields.io/badge/Behavior%20Research%20Methods-published-11111.svg)](https://doi.org/10.3758/s13428-021-01571-z)
 
 # USB-to-TTL
 
@@ -19,7 +20,11 @@ Published with the help of:
 
 [![licensebuttonsby](https://licensebuttons.net/l/by/3.0/88x31.png)](https://creativecommons.org/licenses/by/4.0)
 
-Unless otherwise noted, all contents of this repository that were created by Stefan Appelhoff and Tristan Stenner are released under the CC BY 4.0 license.
+Unless otherwise noted, all contents of this repository that were created by
+[Stefan Appelhoff](https://stefanappelhoff.com) and
+[Tristan Stenner](https://orcid.org/0000-0002-2428-9051)
+are released under the
+[CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0).
 
 # Build instructions
 
