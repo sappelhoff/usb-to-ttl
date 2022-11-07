@@ -60,6 +60,16 @@ workflows:
             branches:
               only: master
 
+  autobuild:
+    jobs:
+      - docs-build
+      - docs-deploy:
+          requires:
+            - docs-build
+          filters:
+            branches:
+              only: master
+
     triggers:
       - schedule:
           cron: "0 4 1 * *"
