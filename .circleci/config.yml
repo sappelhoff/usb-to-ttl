@@ -4,12 +4,19 @@ version: 2.1
 jobs:
   docs-build:
     docker:
-      - image: python:3.8
+      - image: cimg/python:3.10
     steps:
       - checkout
       - run:
+          name: Setup Python environment
+          command: |
+            python3 -m venv /home/circleci/usb2ttl_env
+            echo "source /home/circleci/usb2ttl_env/bin/activate" >> $BASH_ENV
+      - run:
           name: Install dependencies
-          command: pip install -r requirements.txt
+          command: |
+            python -m pip install -U pip
+            python -m pip install -r requirements.txt
       - run:
           name: Build docs
           command: cd docs/ && make html
@@ -22,15 +29,17 @@ jobs:
 
   docs-deploy:
     docker:
-      - image: node:8.10.0
+      - image: cimg/node:lts
     steps:
       - checkout
       - attach_workspace:
           at: docs/_build
       - run:
           name: Install and configure dependencies
+          # do not update gh-pages above 3.0.0
+          # see: https://github.com/tschaub/gh-pages/issues/354
           command: |
-            npm install -g --silent gh-pages@2.2
+            npm install -g --silent gh-pages@3.0.0
             git config user.email "CircleCI@bot.com"
             git config user.name "CircleCI"
       - add_ssh_keys:
@@ -50,3 +59,11 @@ workflows:
           filters:
             branches:
               only: master
+
+    triggers:
+      - schedule:
+          cron: "0 4 1 * *"
+          filters:
+            branches:
+              only:
+                - master
