@@ -13,7 +13,7 @@ Published with the help of:
 
  - [Sphinx](https://www.sphinx-doc.org/en/master/)
  - [sphinx-bootstrap-theme](https://github.com/ryan-roemer/sphinx-bootstrap-theme)
- - [CircleCI](https://circleci.com/blog/deploying-documentation-to-github-pages-with-continuous-integration/) (link to build guide)
+ - [GitHub Pages Deploy Action](https://github.com/JamesIves/github-pages-deploy-action)
  - [GitHub Pages](https://pages.github.com/)
 
 # License
@@ -43,4 +43,4 @@ includes the `pip` tool.
 
 Is it green?
 
-[![CircleCI](https://circleci.com/gh/sappelhoff/usb-to-ttl.svg?style=shield)](https://circleci.com/gh/sappelhoff/usb-to-ttl)
+[![Build and Deploy](https://github.com/sappelhoff/usb-to-ttl/actions/workflows/build_and_deploy.yml/badge.svg)](https://github.com/sappelhoff/usb-to-ttl/actions/workflows/build_and_deploy.yml)

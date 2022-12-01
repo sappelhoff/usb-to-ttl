@@ -1,0 +1,32 @@
+name: Build and Deploy
+on:
+  push:
+    branches: ['master']
+  schedule:
+    - cron: "0 4 1 * *"
+permissions:
+  contents: write
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: install
+        run: |
+          python -m pip install -U pip
+          python -m pip install -r requirements.txt
+      - name: build
+        run: |
+          make -C docs/ html
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs/_build/html
+          branch: gh-pages
+          git-config-name: Stefan Appelhoff
+          git-config-email: stefan.appelhoff@mailbox.org
+          commit-message: updates [skip ci]
+          single-commit: true
