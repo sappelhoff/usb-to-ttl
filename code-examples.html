@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Code examples &#8212; usb-to-ttl  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=fd10adb8"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          usb-to-ttl</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="data-and-scripts.html">Data+Scripts</a></li>
+                <li><a href="diy-instructions.html">DIY</a></li>
+                <li><a href="#">Code examples</a></li>
+                <li><a href="commercial-alternatives.html">Commercial alternatives</a></li>
+                <li><a href="https://github.com/sappelhoff/usb-to-ttl">GitHub</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Code examples</a><ul>
+<li><a class="reference internal" href="#python">Python</a><ul>
+<li><a class="reference internal" href="#find-the-port">Find the port</a></li>
+<li><a class="reference internal" href="#send-information">Send information</a></li>
+<li><a class="reference internal" href="#consider-sampling-rate-of-recording-device">Consider sampling rate of recording device</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="code-examples">
+<span id="id1"></span><h1>Code examples<a class="headerlink" href="#code-examples" title="Link to this heading">¶</a></h1>
+<p>For using these code snippets, you will have to have your hardware (e.g., based on the Arduino Leonardo) connected to a USB port of your computer.
+Next, you will have to find out the port that your computer assigned to the USB device.
+This requires a different procedure, depending on the operating system.</p>
+<ul class="simple">
+<li><p>Windows: Open the “Device Manager” and look at the Ports list (COM &amp; LPT). The ports usually have names like <code class="docutils literal notranslate"><span class="pre">&quot;COM*&quot;</span></code>.</p></li>
+<li><p>Linux and OSX: Check the devices in <code class="docutils literal notranslate"><span class="pre">/dev/</span></code> through <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">/dev/*</span></code>. The port names differ between Linux and OSX:</p>
+<ul>
+<li><p>Linux: usually <code class="docutils literal notranslate"><span class="pre">/dev/ttyUSB*</span></code> or <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM*</span></code></p></li>
+<li><p>OSX: usually <code class="docutils literal notranslate"><span class="pre">/dev/tty.usbmodem*</span></code> or <code class="docutils literal notranslate"><span class="pre">/dev/tty.usbserial*</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>The Python section below shows a way how to find the ports using the <code class="docutils literal notranslate"><span class="pre">pyserial</span></code> library.</p>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading">¶</a></h2>
+<p>You will need to install the <a class="reference external" href="https://github.com/pyserial/pyserial">pyserial</a> package via <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyserial</span></code>.</p>
+<section id="find-the-port">
+<h3>Find the port<a class="headerlink" href="#find-the-port" title="Link to this heading">¶</a></h3>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">pyserial</span></code> to find the port of our USB device</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">serial</span>  <span class="c1"># imports pyserial</span>
+<span class="kn">import</span> <span class="nn">serial.tools.list_ports</span> <span class="k">as</span> <span class="nn">list_ports</span>
+
+<span class="c1"># List all comports</span>
+<span class="n">all_ports</span> <span class="o">=</span> <span class="n">list_ports</span><span class="o">.</span><span class="n">comports</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">all_ports</span><span class="p">)</span>
+
+<span class="c1"># Each entry in the `all_ports` list is a serial device. Check it&#39;s</span>
+<span class="c1"># description and device attributes to learn more</span>
+<span class="n">first_serial_device</span> <span class="o">=</span> <span class="n">all_ports</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_serial_device</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># the `port_name`</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_serial_device</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>  <span class="c1"># perhaps helpful to know if this is your device</span>
+
+<span class="c1"># continue until you found your device, then note down the `port_name`</span>
+</pre></div>
+</div>
+</section>
+<section id="send-information">
+<h3>Send information<a class="headerlink" href="#send-information" title="Link to this heading">¶</a></h3>
+<p>Now open up a serial connection and send some information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">serial</span>
+
+<span class="n">port_name</span> <span class="o">=</span> <span class="s2">&quot;COM4&quot;</span>  <span class="c1"># the name / address we found for our device</span>
+
+<span class="n">ser</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span>
+    <span class="n">port</span><span class="o">=</span><span class="n">port_name</span><span class="p">,</span>
+    <span class="n">baudrate</span><span class="o">=</span><span class="mi">115200</span><span class="p">,</span>
+    <span class="n">bytesize</span><span class="o">=</span><span class="n">serial</span><span class="o">.</span><span class="n">EIGHTBITS</span><span class="p">,</span>  <span class="c1"># set this to the amount of data you want to send</span>
+    <span class="p">)</span>
+
+<span class="c1"># the information we want to send: 8 bits = 1 byte</span>
+<span class="n">byte_to_send</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># send a &quot;1&quot;</span>
+<span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">byte_to_send</span><span class="p">)</span>
+
+<span class="c1"># After measurements are done, close the connection</span>
+<span class="n">ser</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="consider-sampling-rate-of-recording-device">
+<h3>Consider sampling rate of recording device<a class="headerlink" href="#consider-sampling-rate-of-recording-device" title="Link to this heading">¶</a></h3>
+<p>For event marking, we usually want to start with a state of <code class="docutils literal notranslate"><span class="pre">0</span></code>, then set the data to some byte (e.g., <code class="docutils literal notranslate"><span class="pre">1</span></code>), and finally reset the state to <code class="docutils literal notranslate"><span class="pre">0</span></code> again.
+Notably, the time that the data is set to a byte different from <code class="docutils literal notranslate"><span class="pre">0</span></code> needs to be long enough for our recording device to notice.
+How long it “long enough” depends on the sampling rate: At a sampling rate of 1000Hz, the data needs to be “switched on” for <em>at least</em> 1ms (at a sampling rate of 250Hz, for 4ms, etc.).</p>
+<p>When using the firmware we recommend in this project for running your <code class="docutils literal notranslate"><span class="pre">usb-to-ttl</span></code> device, all of this is taken care of in the microcontroller, see <a class="reference internal" href="diy-instructions.html#firmware"><span class="std std-ref">Firmware</span></a>:</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="c1">// The expected byte is an ASCII character in the range of [0, 255]</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// If no new information, do nothing</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// Else, read a single byte and format it as ...</span>
+<span class="w">  </span><span class="c1">// type (_t) &quot;unsigned (u) integer (int) of 8 (8) bits&quot; = uint8_t</span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">inChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>This part of the firmware sets the data, then delays by a bit, and then resets to <code class="docutils literal notranslate"><span class="pre">0</span></code>.
+Of course, handling this issue in the microcontroller also limits the frequency with which you can send signals (every 2000 milliseconds in our firmware example), so don’t forget to adjust the <code class="docutils literal notranslate"><span class="pre">delay</span></code> to your needs.</p>
+</section>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019-2026, Stefan Appelhoff &amp; Tristan Stenner (CC BY 4.0). Last updated on 2026-01-01.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

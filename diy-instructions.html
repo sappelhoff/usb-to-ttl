@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Do-it-yourself instructions &#8212; usb-to-ttl  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=fd10adb8"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          usb-to-ttl</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="data-and-scripts.html">Data+Scripts</a></li>
+                <li><a href="#">DIY</a></li>
+                <li><a href="code-examples.html">Code examples</a></li>
+                <li><a href="commercial-alternatives.html">Commercial alternatives</a></li>
+                <li><a href="https://github.com/sappelhoff/usb-to-ttl">GitHub</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Do-it-yourself instructions</a><ul>
+<li><a class="reference internal" href="#shopping-list">Shopping list</a></li>
+<li><a class="reference internal" href="#build-instructions">Build instructions</a><ul>
+<li><a class="reference internal" href="#step-1">Step 1</a></li>
+<li><a class="reference internal" href="#step-2">Step 2</a></li>
+<li><a class="reference internal" href="#step-3">Step 3</a></li>
+<li><a class="reference internal" href="#step-4">Step 4</a></li>
+<li><a class="reference internal" href="#step-5">Step 5</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#firmware">Firmware</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="do-it-yourself-instructions">
+<span id="diy-instructions"></span><h1>Do-it-yourself instructions<a class="headerlink" href="#do-it-yourself-instructions" title="Link to this heading">¶</a></h1>
+<p>Below we provide a shopping list, build instructions, and the firmware to build your own <code class="docutils literal notranslate"><span class="pre">usb-to-ttl</span></code> device.</p>
+<section id="shopping-list">
+<h2>Shopping list<a class="headerlink" href="#shopping-list" title="Link to this heading">¶</a></h2>
+<p>The items in this shopping list provide a good start to build a <code class="docutils literal notranslate"><span class="pre">usb-to-ttl</span></code> device without soldering and only basic assembly.
+For convenience we provide the “price in euros” and the “item number” for all items, according to an online shop (we picked “Reichelt”).
+To find the items, simply type in the “item number” on the Reichelt shop website.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>price in euros</p></th>
+<th class="head"><p>item-no (<a class="reference external" href="https://reichelt.com">https://reichelt.com</a>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>arduino leonardo</p></td>
+<td><p>18.91</p></td>
+<td><p>ARDUINO LEONARDO</p></td>
+</tr>
+<tr class="row-odd"><td><p>USB A to micro-B cable</p></td>
+<td><p>1.64</p></td>
+<td><p>AK 676-AB2</p></td>
+</tr>
+<tr class="row-even"><td><p>10 pin spring-loaded terminal</p></td>
+<td><p>1.51</p></td>
+<td><p>AST 021-10</p></td>
+</tr>
+<tr class="row-odd"><td><p>8 pin spring-loaded terminal</p></td>
+<td><p>1.26</p></td>
+<td><p>AST 021-08</p></td>
+</tr>
+<tr class="row-even"><td><p>25-pin D-SUB female connector</p></td>
+<td><p>0.61</p></td>
+<td><p>D-SUB BU 25FB</p></td>
+</tr>
+<tr class="row-odd"><td><p>25 pole flat ribbon cable</p></td>
+<td><p>9.07</p></td>
+<td><p>AWG 28-25F 3M</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/materials.jpg"><img alt="photograph of all items" src="_images/materials.jpg" style="width: 400px; height: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">All items needed to assemble the <code class="docutils literal notranslate"><span class="pre">usb-to-ttl</span></code> device.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="build-instructions">
+<h2>Build instructions<a class="headerlink" href="#build-instructions" title="Link to this heading">¶</a></h2>
+<section id="step-1">
+<h3>Step 1<a class="headerlink" href="#step-1" title="Link to this heading">¶</a></h3>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/db25_cables.jpg"><img alt="photograph of attaching the db 25 connector" height="300" src="_images/db25_cables.jpg" width="1200" />
+</a>
+<figcaption>
+<p><span class="caption-text">Attaching the db 25 connector to the cables.</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-2">
+<h3>Step 2<a class="headerlink" href="#step-2" title="Link to this heading">¶</a></h3>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="_images/parport.jpg"><img alt="schematic of the pins in the db 25 connector" height="656" src="_images/parport.jpg" width="1160" />
+</a>
+<figcaption>
+<p><span class="caption-text">In the db 25 connector, pins 2-9 (8 pins in total) are for data.
+Pick any pin from 18-25 for the ground.</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-3">
+<h3>Step 3<a class="headerlink" href="#step-3" title="Link to this heading">¶</a></h3>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="_images/prep_wires.jpg"><img alt="photograph of preparing the wires for the terminals" height="600" src="_images/prep_wires.jpg" width="1200" />
+</a>
+<figcaption>
+<p><span class="caption-text">Preparing the wires for putting them into the spring-loaded terminals.
+Pick those leading to pins 2-9 for data, and one leading to any pin
+from 18-25 for the ground.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-4">
+<h3>Step 4<a class="headerlink" href="#step-4" title="Link to this heading">¶</a></h3>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="_images/cables_arduino.jpg"><img alt="photograph of connecting wires with the terminals" height="600" src="_images/cables_arduino.jpg" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-text">Connecting the wires with the spring-loaded terminals attached to the Arduino Leonardo.
+For simplicity, connect pins 2-9 from the db 25 connector to pins 2-9 on the Arduino.
+Connect the ground from the db 25 connector (any pin from 18-25) to the ground pin
+on the Arduino.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-5">
+<h3>Step 5<a class="headerlink" href="#step-5" title="Link to this heading">¶</a></h3>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="_images/finished_lpt.jpg"><img alt="photograph of the finished device" src="_images/finished_lpt.jpg" style="width: 400px; height: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The finished device with an attached LPT cable (parallel port).</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="firmware">
+<span id="id1"></span><h2>Firmware<a class="headerlink" href="#firmware" title="Link to this heading">¶</a></h2>
+<p>This is the firmware that should be uploaded to the microcontroller.
+For uploading the firmware to the Arduino, please consult one of the abundant
+tutorials in the
+<a class="reference external" href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-uploading-a-sketch">Arduino documentation</a>.</p>
+<p>Take care to define the <code class="docutils literal notranslate"><span class="pre">outputPins</span></code> according to how you connected your wires
+(if you followed the instructions above, this will already be the case).</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/*</span>
+<span class="linenos"> 2</span><span class="cm">Device firmware for a USB trigger box (Appelhoff &amp; Stenner, 2021).</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="cm">MIT License</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="cm">Copyright 2021 Stefan Appelhoff, Tristan Stenner</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="cm">*/</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Arduino.h&quot;</span><span class="c1">;</span>
+<span class="linenos">11</span><span class="c1">// the following pin numbers depend on where you actually put the wires on your device</span>
+<span class="linenos">12</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">outputPins</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">15</span><span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="linenos">16</span><span class="w">  </span><span class="c1">// &quot;auto&quot; is inferring variable type from &quot;outputPins&quot; array = int</span>
+<span class="linenos">17</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">pin</span><span class="o">:</span><span class="w"> </span><span class="n">outputPins</span><span class="p">)</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="linenos">18</span><span class="p">}</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="c1">// The expected byte is an ASCII character in the range of [0, 255]</span>
+<span class="linenos">21</span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">22</span><span class="w">  </span><span class="c1">// If no new information, do nothing</span>
+<span class="linenos">23</span><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos">24</span><span class="w">  </span><span class="c1">// Else, read a single byte and format it as ...</span>
+<span class="linenos">25</span><span class="w">  </span><span class="c1">// type (_t) &quot;unsigned (u) integer (int) of 8 (8) bits&quot; = uint8_t</span>
+<span class="linenos">26</span><span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">inChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="w">  </span><span class="c1">// Set the 8 pins to correspond to the byte</span>
+<span class="linenos">29</span><span class="w">  </span><span class="n">setOutputs</span><span class="p">(</span><span class="n">inChar</span><span class="p">);</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="w">  </span><span class="c1">// Leave the pins ON for long enough to be detected</span>
+<span class="linenos">32</span><span class="w">  </span><span class="c1">// This depends on the sampling rate of the device that receives the byte</span>
+<span class="linenos">33</span><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span><span class="w">  </span><span class="c1">// Then clear again and wait shortly</span>
+<span class="linenos">36</span><span class="w">  </span><span class="n">clearOutputs</span><span class="p">();</span>
+<span class="linenos">37</span><span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+<span class="linenos">38</span><span class="p">}</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="c1">// Quick way of setting the 8 pins by using bitwise operators</span>
+<span class="linenos">41</span><span class="c1">// for each pin check using &quot;&amp;&quot;, whether the byte corresponding to</span>
+<span class="linenos">42</span><span class="c1">// own position is ON. We get the own position through the &quot;&lt;&lt;&quot; sliding</span>
+<span class="linenos">43</span><span class="c1">// of a 1 across the 00000001 ... 00000010 ... 00000100 ... etc.</span>
+<span class="linenos">44</span><span class="c1">// setting a pin to LOW if zero and else HIGH</span>
+<span class="linenos">45</span><span class="kt">void</span><span class="w"> </span><span class="nf">setOutputs</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">outChar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">46</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">outputPins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">outChar</span><span class="o">&amp;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="p">));</span>
+<span class="linenos">47</span><span class="p">}</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span><span class="c1">// Clearing all pins, setting their output to LOW</span>
+<span class="linenos">51</span><span class="kt">void</span><span class="w"> </span><span class="nf">clearOutputs</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">52</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">pin</span><span class="o">:</span><span class="w"> </span><span class="n">outputPins</span><span class="p">)</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="linenos">53</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019-2026, Stefan Appelhoff &amp; Tristan Stenner (CC BY 4.0). Last updated on 2026-01-01.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

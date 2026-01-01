@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data and analysis scripts from the article &#8212; usb-to-ttl  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=fd10adb8"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          usb-to-ttl</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="#">Data+Scripts</a></li>
+                <li><a href="diy-instructions.html">DIY</a></li>
+                <li><a href="code-examples.html">Code examples</a></li>
+                <li><a href="commercial-alternatives.html">Commercial alternatives</a></li>
+                <li><a href="https://github.com/sappelhoff/usb-to-ttl">GitHub</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Data and analysis scripts from the article</a><ul>
+<li><a class="reference internal" href="#article">Article</a></li>
+<li><a class="reference internal" href="#data">Data</a></li>
+<li><a class="reference internal" href="#analysis-script">Analysis script</a></li>
+<li><a class="reference internal" href="#firmware-used-on-device-during-study">Firmware used on device during study</a></li>
+<li><a class="reference internal" href="#script-used-on-host-computer-during-study">Script used on host computer during study</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="data-and-analysis-scripts-from-the-article">
+<span id="data-and-scripts"></span><h1>Data and analysis scripts from the article<a class="headerlink" href="#data-and-analysis-scripts-from-the-article" title="Link to this heading">¶</a></h1>
+<section id="article">
+<h2>Article<a class="headerlink" href="#article" title="Link to this heading">¶</a></h2>
+<p>The article “In COM we trust: Feasibility of USB-based event marking” is available with open access from Behavior Research Methods: <a class="reference external" href="https://doi.org/10.3758/s13428-021-01571-z">doi:10.3758/s13428-021-01571-z</a></p>
+</section>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Link to this heading">¶</a></h2>
+<p>The data is permanently archived on Zenodo and available via this DOI: <a class="reference external" href="https://doi.org/10.5281/zenodo.3838621">doi:10.5281/zenodo.3838621</a></p>
+</section>
+<section id="analysis-script">
+<h2>Analysis script<a class="headerlink" href="#analysis-script" title="Link to this heading">¶</a></h2>
+<p>This Python script was used for data analysis.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="sd">&quot;&quot;&quot;Analyze data for &quot;In COM We Trust: Feasibility of USB-Based Event Marking&quot;.</span>
+<span class="linenos">  2</span>
+<span class="linenos">  3</span><span class="sd">Expects the following data files in a /data directory nested in the</span>
+<span class="linenos">  4</span><span class="sd">working directory</span>
+<span class="linenos">  5</span><span class="sd">(available from https://doi.org/10.5281/zenodo.3838622):</span>
+<span class="linenos">  6</span>
+<span class="linenos">  7</span><span class="sd">- NLS-lin-leo.txt.gz</span>
+<span class="linenos">  8</span><span class="sd">- NLS-lin-ljr.txt.gz</span>
+<span class="linenos">  9</span><span class="sd">- NLS-lin-lu3.txt.gz</span>
+<span class="linenos"> 10</span><span class="sd">- NLS-lin-par.txt.gz</span>
+<span class="linenos"> 11</span><span class="sd">- NLS-lin-t32.txt.gz</span>
+<span class="linenos"> 12</span><span class="sd">- NLS-lin-tlc.txt.gz</span>
+<span class="linenos"> 13</span><span class="sd">- NLS-lin-uno.txt.gz</span>
+<span class="linenos"> 14</span><span class="sd">- NLS-win-leo.txt.gz</span>
+<span class="linenos"> 15</span><span class="sd">- NLS-win-ljr.txt.gz</span>
+<span class="linenos"> 16</span><span class="sd">- NLS-win-lu3.txt.gz</span>
+<span class="linenos"> 17</span><span class="sd">- NLS-win-par.txt.gz</span>
+<span class="linenos"> 18</span><span class="sd">- NLS-win-t32.txt.gz</span>
+<span class="linenos"> 19</span><span class="sd">- NLS-win-tlc.txt.gz</span>
+<span class="linenos"> 20</span><span class="sd">- NLS-win-uno.txt.gz</span>
+<span class="linenos"> 21</span>
+<span class="linenos"> 22</span><span class="sd">Will produce the following outputs in a new directory &quot;analysis_outputs&quot;:</span>
+<span class="linenos"> 23</span>
+<span class="linenos"> 24</span><span class="sd">- figure2_raincloud.png</span>
+<span class="linenos"> 25</span><span class="sd">- figure2_raincloud.pdf</span>
+<span class="linenos"> 26</span>
+<span class="linenos"> 27</span><span class="sd">Python requirements:</span>
+<span class="linenos"> 28</span>
+<span class="linenos"> 29</span><span class="sd">- Python &gt;= 3.6</span>
+<span class="linenos"> 30</span><span class="sd">- numpy &gt;= 1.15</span>
+<span class="linenos"> 31</span><span class="sd">- pandas &gt;= 0.24</span>
+<span class="linenos"> 32</span><span class="sd">- matplotlib &gt;= 3.0.2</span>
+<span class="linenos"> 33</span><span class="sd">- seaborn == 0.10.1</span>
+<span class="linenos"> 34</span><span class="sd">- ptitprince == 0.2.4</span>
+<span class="linenos"> 35</span>
+<span class="linenos"> 36</span><span class="sd">It is recommended to run this script in an isolated environment,</span>
+<span class="linenos"> 37</span><span class="sd">for example by using conda (https://docs.conda.io/en/latest/miniconda.html).</span>
+<span class="linenos"> 38</span><span class="sd">After making conda available on your command line, run the following</span>
+<span class="linenos"> 39</span><span class="sd">commands to create a suitable environment for running `analysis.py`:</span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span><span class="sd">- conda create -n usb_to_ttl Python=3.8 numpy pandas matplotlib --yes</span>
+<span class="linenos"> 42</span><span class="sd">- conda activate usb_to_ttl</span>
+<span class="linenos"> 43</span><span class="sd">- pip install seaborn==0.10.1 ptitprince==0.2.4</span>
+<span class="linenos"> 44</span>
+<span class="linenos"> 45</span><span class="sd">And then run:</span>
+<span class="linenos"> 46</span>
+<span class="linenos"> 47</span><span class="sd">- python analysis.py</span>
+<span class="linenos"> 48</span>
+<span class="linenos"> 49</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 50</span><span class="c1"># %%  Imports</span>
+<span class="linenos"> 51</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos"> 54</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 55</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="linenos"> 56</span><span class="kn">import</span> <span class="nn">ptitprince</span>
+<span class="linenos"> 57</span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span><span class="c1"># %% Function to read latency data</span>
+<span class="linenos"> 60</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">fnames</span><span class="p">):</span>
+<span class="linenos"> 63</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Read latency data.</span>
+<span class="linenos"> 64</span>
+<span class="linenos"> 65</span><span class="sd">    Parameters</span>
+<span class="linenos"> 66</span><span class="sd">    ----------</span>
+<span class="linenos"> 67</span><span class="sd">    fnames : list of str</span>
+<span class="linenos"> 68</span><span class="sd">        The files to read in.</span>
+<span class="linenos"> 69</span>
+<span class="linenos"> 70</span><span class="sd">    Returns</span>
+<span class="linenos"> 71</span><span class="sd">    -------</span>
+<span class="linenos"> 72</span><span class="sd">    df : pandas.DataFrame</span>
+<span class="linenos"> 73</span><span class="sd">        All files concatenated as a data frame.</span>
+<span class="linenos"> 74</span>
+<span class="linenos"> 75</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 76</span>    <span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 77</span>    <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">fnames</span><span class="p">:</span>
+<span class="linenos"> 78</span>
+<span class="linenos"> 79</span>        <span class="c1"># Read labstreamer file, skipping header</span>
+<span class="linenos"> 80</span>        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s2">&quot;NAN&quot;</span><span class="p">)</span>
+<span class="linenos"> 81</span>
+<span class="linenos"> 82</span>        <span class="c1"># Drop all rows where latency_ms was not measured</span>
+<span class="linenos"> 83</span>        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;latency_ms&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+<span class="linenos"> 84</span>
+<span class="linenos"> 85</span>        <span class="c1"># Add more information</span>
+<span class="linenos"> 86</span>        <span class="n">opsys</span> <span class="o">=</span> <span class="n">fname</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos"> 87</span>        <span class="n">device</span> <span class="o">=</span> <span class="n">fname</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">][:</span><span class="mi">3</span><span class="p">]</span>
+<span class="linenos"> 88</span>        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;channel&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;Analog 0&quot;</span><span class="p">:</span> <span class="s2">&quot;kbd&quot;</span><span class="p">,</span> <span class="s2">&quot;Analog 2&quot;</span><span class="p">:</span> <span class="n">device</span><span class="p">})</span>
+<span class="linenos"> 89</span>        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;os&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">opsys</span>
+<span class="linenos"> 90</span>        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;meas&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">opsys</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">device</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos"> 91</span>
+<span class="linenos"> 92</span>        <span class="c1"># Drop the event column because it&#39;s meaningless in this circumstance</span>
+<span class="linenos"> 93</span>        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;event&quot;</span><span class="p">)</span>
+<span class="linenos"> 94</span>
+<span class="linenos"> 95</span>        <span class="c1"># Each group of unique time_s measurements gets an index</span>
+<span class="linenos"> 96</span>        <span class="c1"># Example: all rows where time_s is 5.4 have as entry under</span>
+<span class="linenos"> 97</span>        <span class="c1"># &#39;index&#39; 10</span>
+<span class="linenos"> 98</span>        <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;time_s&quot;</span><span class="p">],</span> <span class="n">return_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_inverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos"> 99</span>        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;idx&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
+<span class="linenos">100</span>        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;idx&quot;</span><span class="p">)</span>
+<span class="linenos">101</span>
+<span class="linenos">102</span>        <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="linenos">103</span>
+<span class="linenos">104</span>    <span class="c1"># Concatenate all data frames and reset the pandas index</span>
+<span class="linenos">105</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
+<span class="linenos">106</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">107</span>
+<span class="linenos">108</span>    <span class="c1"># Map abbreviations to full names</span>
+<span class="linenos">109</span>    <span class="k">if</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;lin&quot;</span><span class="p">,</span> <span class="s2">&quot;win&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;os&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
+<span class="linenos">110</span>        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;os&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;os&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;lin&quot;</span><span class="p">:</span> <span class="s2">&quot;Linux&quot;</span><span class="p">,</span> <span class="s2">&quot;win&quot;</span><span class="p">:</span> <span class="s2">&quot;Windows&quot;</span><span class="p">})</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span>    <span class="k">if</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;kbd&quot;</span><span class="p">,</span> <span class="s2">&quot;par&quot;</span><span class="p">,</span> <span class="s2">&quot;leo&quot;</span><span class="p">,</span> <span class="s2">&quot;uno&quot;</span><span class="p">,</span> <span class="s2">&quot;t32&quot;</span><span class="p">,</span> <span class="s2">&quot;tlc&quot;</span><span class="p">,</span> <span class="s2">&quot;lu3&quot;</span><span class="p">,</span> <span class="s2">&quot;ljr&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span>
+<span class="linenos">113</span>        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="linenos">114</span>    <span class="p">):</span>
+<span class="linenos">115</span>        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+<span class="linenos">116</span>            <span class="p">{</span>
+<span class="linenos">117</span>                <span class="s2">&quot;kbd&quot;</span><span class="p">:</span> <span class="s2">&quot;Teensy 3.2 Keyboard&quot;</span><span class="p">,</span>
+<span class="linenos">118</span>                <span class="s2">&quot;par&quot;</span><span class="p">:</span> <span class="s2">&quot;Parallel Port&quot;</span><span class="p">,</span>
+<span class="linenos">119</span>                <span class="s2">&quot;leo&quot;</span><span class="p">:</span> <span class="s2">&quot;Arduino Leonardo&quot;</span><span class="p">,</span>
+<span class="linenos">120</span>                <span class="s2">&quot;uno&quot;</span><span class="p">:</span> <span class="s2">&quot;Arduino Uno&quot;</span><span class="p">,</span>
+<span class="linenos">121</span>                <span class="s2">&quot;t32&quot;</span><span class="p">:</span> <span class="s2">&quot;Teensy 3.2&quot;</span><span class="p">,</span>
+<span class="linenos">122</span>                <span class="s2">&quot;tlc&quot;</span><span class="p">:</span> <span class="s2">&quot;Teensy LC&quot;</span><span class="p">,</span>
+<span class="linenos">123</span>                <span class="s2">&quot;ljr&quot;</span><span class="p">:</span> <span class="s2">&quot;LabJack U3 (writeRegister)&quot;</span><span class="p">,</span>
+<span class="linenos">124</span>                <span class="s2">&quot;lu3&quot;</span><span class="p">:</span> <span class="s2">&quot;LabJack U3 (setFIOState)&quot;</span><span class="p">,</span>
+<span class="linenos">125</span>            <span class="p">}</span>
+<span class="linenos">126</span>        <span class="p">)</span>
+<span class="linenos">127</span>
+<span class="linenos">128</span>    <span class="k">return</span> <span class="n">df</span>
+<span class="linenos">129</span>
+<span class="linenos">130</span>
+<span class="linenos">131</span><span class="c1"># %% Function to preprocess data</span>
+<span class="linenos">132</span>
+<span class="linenos">133</span>
+<span class="linenos">134</span><span class="k">def</span> <span class="nf">preprocess_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">max_uncertainty</span><span class="p">,</span> <span class="n">n_first_measurements</span><span class="p">):</span>
+<span class="linenos">135</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Preprocess the data.</span>
+<span class="linenos">136</span>
+<span class="linenos">137</span><span class="sd">    Parameters</span>
+<span class="linenos">138</span><span class="sd">    ----------</span>
+<span class="linenos">139</span><span class="sd">    df : pandas.DataFrame</span>
+<span class="linenos">140</span><span class="sd">        The data to be preprocessed.</span>
+<span class="linenos">141</span><span class="sd">    max_uncertainty : float</span>
+<span class="linenos">142</span><span class="sd">        Maximum acceptable network uncertainty in milliseconds.</span>
+<span class="linenos">143</span><span class="sd">        All rows in `df` with higher uncertainty will be dropped.</span>
+<span class="linenos">144</span><span class="sd">    n_first_measurements : int</span>
+<span class="linenos">145</span><span class="sd">        The number of first valid measurements to select.</span>
+<span class="linenos">146</span>
+<span class="linenos">147</span><span class="sd">    Returns</span>
+<span class="linenos">148</span><span class="sd">    -------</span>
+<span class="linenos">149</span><span class="sd">    df : pandas.DataFrame</span>
+<span class="linenos">150</span><span class="sd">        The preprocessed input data, changed inplace.</span>
+<span class="linenos">151</span>
+<span class="linenos">152</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">153</span>    <span class="c1"># Drop rows where network uncertainty is too high</span>
+<span class="linenos">154</span>    <span class="c1">#</span>
+<span class="linenos">155</span>    <span class="c1"># When the LabStreamer detects a TTL trigger at timepoint tTTL,</span>
+<span class="linenos">156</span>    <span class="c1"># it calculates the delay between the last LSL trigger based on the timestamp tLSL</span>
+<span class="linenos">157</span>    <span class="c1"># (reported by the stimulus PC) and converts this timestamp to its own</span>
+<span class="linenos">158</span>    <span class="c1"># clock by subtracting the estimated clock offset Δt.</span>
+<span class="linenos">159</span>    <span class="c1"># The TTL latency is then calculated as tTTL-(tLSL-Δt).</span>
+<span class="linenos">160</span>    <span class="c1"># Measurement errors of the estimated clock offset are therefore reflected</span>
+<span class="linenos">161</span>    <span class="c1"># in the calculated trigger latency,</span>
+<span class="linenos">162</span>    <span class="c1"># but are not indicative of errors in the trigger latency tTTL</span>
+<span class="linenos">163</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;network_unc_ms&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">max_uncertainty</span><span class="p">]</span>
+<span class="linenos">164</span>
+<span class="linenos">165</span>    <span class="c1"># Drop rows where the latency is erroneously low</span>
+<span class="linenos">166</span>    <span class="c1">#</span>
+<span class="linenos">167</span>    <span class="c1"># The LabStreamer has a sampling rate of 10kHz and detects events as the</span>
+<span class="linenos">168</span>    <span class="c1"># first sample above the threshold in the configured interval relative to</span>
+<span class="linenos">169</span>    <span class="c1"># the LSL trigger.</span>
+<span class="linenos">170</span>    <span class="c1"># Sometimes, the keyboard input received by the data collection script</span>
+<span class="linenos">171</span>    <span class="c1"># was duplicated after ~2ms and the (still active; as the outputs are set</span>
+<span class="linenos">172</span>    <span class="c1"># to high for 5ms) TTL trigger was attributed to the second event with a</span>
+<span class="linenos">173</span>    <span class="c1"># latency of less then one sample (0.1ms @ 10kHz).</span>
+<span class="linenos">174</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;latency_ms&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Teensy 3.2 Keyboard&quot;</span><span class="p">))]</span>
+<span class="linenos">175</span>
+<span class="linenos">176</span>    <span class="c1"># Drop measurement indices that do not consist of two rows</span>
+<span class="linenos">177</span>    <span class="c1"># (one for keyboard, and one for device)</span>
+<span class="linenos">178</span>    <span class="c1"># equivalent to the following line:</span>
+<span class="linenos">179</span>    <span class="c1"># df = df.groupby([&quot;meas&quot;, &quot;idx&quot;]).filter(lambda x: x[&quot;latency_ms&quot;].count() == 2)</span>
+<span class="linenos">180</span>    <span class="n">df_idx_count</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;meas&quot;</span><span class="p">)[</span><span class="s2">&quot;idx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+<span class="linenos">181</span>    <span class="n">df_idx_count</span> <span class="o">=</span> <span class="n">df_idx_count</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;idx&quot;</span><span class="p">:</span> <span class="s2">&quot;idx_count&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="linenos">182</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_idx_count</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;meas&quot;</span><span class="p">,</span> <span class="s2">&quot;idx&quot;</span><span class="p">])</span>
+<span class="linenos">183</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;idx_count&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
+<span class="linenos">184</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;idx_count&quot;</span><span class="p">])</span>
+<span class="linenos">185</span>
+<span class="linenos">186</span>    <span class="c1"># Make a new continuous index based on clean data</span>
+<span class="linenos">187</span>    <span class="n">tmps</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="linenos">188</span>    <span class="k">for</span> <span class="n">meas</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;meas&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+<span class="linenos">189</span>        <span class="n">tmps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<span class="linenos">190</span>            <span class="p">(</span>
+<span class="linenos">191</span>                <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;meas&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">meas</span><span class="p">]</span>
+<span class="linenos">192</span>                <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;idx&quot;</span><span class="p">)</span>
+<span class="linenos">193</span>                <span class="o">.</span><span class="n">last</span><span class="p">()</span>
+<span class="linenos">194</span>                <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="linenos">195</span>                <span class="o">.</span><span class="n">reset_index</span><span class="p">()[[</span><span class="s2">&quot;meas&quot;</span><span class="p">,</span> <span class="s2">&quot;idx&quot;</span><span class="p">,</span> <span class="s2">&quot;index&quot;</span><span class="p">]]</span>
+<span class="linenos">196</span>            <span class="p">)</span>
+<span class="linenos">197</span>        <span class="p">)</span>
+<span class="linenos">198</span>
+<span class="linenos">199</span>    <span class="n">tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">tmps</span><span class="p">)</span>
+<span class="linenos">200</span>    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="s2">&quot;i&quot;</span><span class="p">})</span>
+<span class="linenos">201</span>
+<span class="linenos">202</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;meas&quot;</span><span class="p">,</span> <span class="s2">&quot;idx&quot;</span><span class="p">],</span> <span class="n">validate</span><span class="o">=</span><span class="s2">&quot;many_to_one&quot;</span><span class="p">)</span>
+<span class="linenos">203</span>
+<span class="linenos">204</span>    <span class="c1"># Select only the n_first_measurements</span>
+<span class="linenos">205</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;i&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">n_first_measurements</span><span class="p">]</span>
+<span class="linenos">206</span>
+<span class="linenos">207</span>    <span class="c1"># Sort and return</span>
+<span class="linenos">208</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;meas&quot;</span><span class="p">,</span> <span class="s2">&quot;os&quot;</span><span class="p">,</span> <span class="s2">&quot;device&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;latency_ms&quot;</span><span class="p">]]</span>
+<span class="linenos">209</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;os&quot;</span><span class="p">,</span> <span class="s2">&quot;device&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">])</span>
+<span class="linenos">210</span>    <span class="k">return</span> <span class="n">df</span>
+<span class="linenos">211</span>
+<span class="linenos">212</span>
+<span class="linenos">213</span><span class="c1"># %% Define constants for the analysis</span>
+<span class="linenos">214</span>
+<span class="linenos">215</span><span class="c1"># Paths to the data files</span>
+<span class="linenos">216</span><span class="n">FNAMES</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos">217</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-win-leo.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">218</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-win-ljr.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">219</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-win-lu3.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">220</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-win-par.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">221</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-win-tlc.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">222</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-win-t32.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">223</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-win-uno.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">224</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-lin-leo.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">225</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-lin-ljr.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">226</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-lin-lu3.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">227</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-lin-par.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">228</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-lin-tlc.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">229</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-lin-t32.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">230</span>    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;NLS-lin-uno.txt.gz&quot;</span><span class="p">),</span>
+<span class="linenos">231</span><span class="p">]</span>
+<span class="linenos">232</span>
+<span class="linenos">233</span><span class="c1"># Parameters for `preprocess_data` (see docstring)</span>
+<span class="linenos">234</span><span class="n">MAX_UNCERTAINTY</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="linenos">235</span><span class="n">N_FIRST_MEASUREMENTS</span> <span class="o">=</span> <span class="mi">2500</span>
+<span class="linenos">236</span>
+<span class="linenos">237</span><span class="c1"># Settings for plotting</span>
+<span class="linenos">238</span><span class="n">LETTER_WIDTH_INCH</span> <span class="o">=</span> <span class="mf">8.5</span>
+<span class="linenos">239</span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="linenos">240</span>
+<span class="linenos">241</span><span class="c1"># Create output directory for analysis</span>
+<span class="linenos">242</span><span class="n">OUTDIR</span> <span class="o">=</span> <span class="s2">&quot;analysis_outputs&quot;</span>
+<span class="linenos">243</span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">OUTDIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">244</span>
+<span class="linenos">245</span><span class="c1"># %% Read the data</span>
+<span class="linenos">246</span>
+<span class="linenos">247</span><span class="n">df</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span><span class="n">FNAMES</span><span class="p">)</span>
+<span class="linenos">248</span>
+<span class="linenos">249</span><span class="c1"># Contingency table of measurements</span>
+<span class="linenos">250</span><span class="n">table_recorded</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span>
+<span class="linenos">251</span>    <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;os&quot;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;os&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())),</span>
+<span class="linenos">252</span>    <span class="n">columns</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())),</span>
+<span class="linenos">253</span>    <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="linenos">254</span><span class="p">)</span>
+<span class="linenos">255</span>
+<span class="linenos">256</span><span class="c1"># Drop keyboard, because it is measured for each device, ...</span>
+<span class="linenos">257</span><span class="c1"># and thus contains all other columns</span>
+<span class="linenos">258</span><span class="n">table_recorded</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;os&quot;</span>
+<span class="linenos">259</span><span class="n">table_recorded</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;device&quot;</span>
+<span class="linenos">260</span><span class="n">table_recorded</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Teensy 3.2 Keyboard&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">261</span>
+<span class="linenos">262</span><span class="n">min_measurements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">table_recorded</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="linenos">263</span><span class="n">max_measurements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">table_recorded</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="linenos">264</span>
+<span class="linenos">265</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Min and max number of measurements: </span><span class="si">{</span><span class="n">min_measurements</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">max_measurements</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">266</span>
+<span class="linenos">267</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Table of recorded measurements:&quot;</span><span class="p">)</span>
+<span class="linenos">268</span><span class="k">try</span><span class="p">:</span>
+<span class="linenos">269</span>    <span class="n">display</span><span class="p">(</span><span class="n">table_recorded</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="linenos">270</span><span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+<span class="linenos">271</span>    <span class="nb">print</span><span class="p">(</span><span class="n">table_recorded</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="linenos">272</span>
+<span class="linenos">273</span><span class="c1"># Contingency table of dropped measurements</span>
+<span class="linenos">274</span><span class="n">dropped</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;network_unc_ms&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">MAX_UNCERTAINTY</span><span class="p">]</span>
+<span class="linenos">275</span>
+<span class="linenos">276</span><span class="n">table_dropped</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span>
+<span class="linenos">277</span>    <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">dropped</span><span class="p">[</span><span class="s2">&quot;os&quot;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;os&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())),</span>
+<span class="linenos">278</span>    <span class="n">columns</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">dropped</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())),</span>
+<span class="linenos">279</span>    <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="linenos">280</span><span class="p">)</span>
+<span class="linenos">281</span>
+<span class="linenos">282</span><span class="c1"># Again, drop keyboard because it is measured for each device, ...</span>
+<span class="linenos">283</span><span class="c1">#  and thus contains all other columns</span>
+<span class="linenos">284</span><span class="n">table_dropped</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;os&quot;</span>
+<span class="linenos">285</span><span class="n">table_dropped</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;device&quot;</span>
+<span class="linenos">286</span><span class="n">table_dropped</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Teensy 3.2 Keyboard&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">287</span>
+<span class="linenos">288</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Table of dropped measurements (uncertainty &gt; </span><span class="si">{</span><span class="n">MAX_UNCERTAINTY</span><span class="si">}</span><span class="s2">):&quot;</span><span class="p">)</span>
+<span class="linenos">289</span><span class="k">try</span><span class="p">:</span>
+<span class="linenos">290</span>    <span class="n">display</span><span class="p">(</span><span class="n">table_dropped</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="linenos">291</span><span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+<span class="linenos">292</span>    <span class="nb">print</span><span class="p">(</span><span class="n">table_dropped</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="linenos">293</span>
+<span class="linenos">294</span><span class="c1"># %% Preprocess data</span>
+<span class="linenos">295</span>
+<span class="linenos">296</span><span class="n">df</span> <span class="o">=</span> <span class="n">preprocess_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">MAX_UNCERTAINTY</span><span class="p">,</span> <span class="n">N_FIRST_MEASUREMENTS</span><span class="p">)</span>
+<span class="linenos">297</span>
+<span class="linenos">298</span><span class="c1"># %% Produce data summary table</span>
+<span class="linenos">299</span>
+<span class="linenos">300</span>
+<span class="linenos">301</span><span class="k">def</span> <span class="nf">iqr</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">302</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate interquartile range.&quot;&quot;&quot;</span>
+<span class="linenos">303</span>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">25</span><span class="p">]))</span>
+<span class="linenos">304</span>
+<span class="linenos">305</span>
+<span class="linenos">306</span><span class="n">table</span> <span class="o">=</span> <span class="p">(</span>
+<span class="linenos">307</span>    <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;device&quot;</span><span class="p">,</span> <span class="s2">&quot;os&quot;</span><span class="p">])</span>
+<span class="linenos">308</span>    <span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+<span class="linenos">309</span>        <span class="p">{</span>
+<span class="linenos">310</span>            <span class="s2">&quot;latency_ms&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">,</span> <span class="n">iqr</span><span class="p">],</span>
+<span class="linenos">311</span>        <span class="p">}</span>
+<span class="linenos">312</span>    <span class="p">)</span>
+<span class="linenos">313</span>    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="linenos">314</span><span class="p">)</span>
+<span class="linenos">315</span>
+<span class="linenos">316</span>
+<span class="linenos">317</span><span class="c1"># %% Map multiindex of table to single index</span>
+<span class="linenos">318</span><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">multi</span><span class="o">.</span><span class="n">MultiIndex</span><span class="p">):</span>
+<span class="linenos">319</span>    <span class="n">cols</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">320</span>    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<span class="linenos">321</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">col</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">322</span>            <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">col</span><span class="p">))</span>
+<span class="linenos">323</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">324</span>            <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos">325</span>
+<span class="linenos">326</span>    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">]</span>
+<span class="linenos">327</span>    <span class="n">table</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">cols</span>
+<span class="linenos">328</span>
+<span class="linenos">329</span>
+<span class="linenos">330</span><span class="c1"># %% Show full table</span>
+<span class="linenos">331</span><span class="c1"># For convenience, do this in Ipython, which allows copying the table</span>
+<span class="linenos">332</span><span class="c1"># to then paste it into Google Sheets and importing it from there into</span>
+<span class="linenos">333</span><span class="c1"># Google Docs.</span>
+<span class="linenos">334</span><span class="c1"># As a final step, the imported table can be formatted in APA style,</span>
+<span class="linenos">335</span><span class="c1"># see this video for help: https://www.youtube.com/watch?v=f7WomKsmeuI</span>
+<span class="linenos">336</span><span class="n">copy</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="linenos">337</span><span class="n">copy</span> <span class="o">=</span> <span class="n">copy</span><span class="p">[</span>
+<span class="linenos">338</span>    <span class="p">[</span>
+<span class="linenos">339</span>        <span class="s2">&quot;os&quot;</span><span class="p">,</span>
+<span class="linenos">340</span>        <span class="s2">&quot;device&quot;</span><span class="p">,</span>
+<span class="linenos">341</span>        <span class="s2">&quot;latency-ms-mean&quot;</span><span class="p">,</span>
+<span class="linenos">342</span>        <span class="s2">&quot;latency-ms-std&quot;</span><span class="p">,</span>
+<span class="linenos">343</span>        <span class="s2">&quot;latency-ms-median&quot;</span><span class="p">,</span>
+<span class="linenos">344</span>        <span class="s2">&quot;latency-ms-iqr&quot;</span><span class="p">,</span>
+<span class="linenos">345</span>    <span class="p">]</span>
+<span class="linenos">346</span><span class="p">]</span>
+<span class="linenos">347</span><span class="n">copy</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Operating System&quot;</span><span class="p">,</span> <span class="s2">&quot;Device&quot;</span><span class="p">,</span> <span class="s2">&quot;Mean&quot;</span><span class="p">,</span> <span class="s2">&quot;SD&quot;</span><span class="p">,</span> <span class="s2">&quot;Median&quot;</span><span class="p">,</span> <span class="s2">&quot;IQR&quot;</span><span class="p">]</span>
+<span class="linenos">348</span>
+<span class="linenos">349</span><span class="c1"># Round, drop unneeded columns from copy and sort</span>
+<span class="linenos">350</span><span class="n">copy</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">351</span><span class="n">copy</span> <span class="o">=</span> <span class="n">copy</span><span class="p">[[</span><span class="s2">&quot;Operating System&quot;</span><span class="p">,</span> <span class="s2">&quot;Device&quot;</span><span class="p">,</span> <span class="s2">&quot;Mean&quot;</span><span class="p">,</span> <span class="s2">&quot;SD&quot;</span><span class="p">,</span> <span class="s2">&quot;Median&quot;</span><span class="p">,</span> <span class="s2">&quot;IQR&quot;</span><span class="p">]]</span>
+<span class="linenos">352</span><span class="n">copy</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Operating System&quot;</span><span class="p">,</span> <span class="s2">&quot;Mean&quot;</span><span class="p">])</span>
+<span class="linenos">353</span>
+<span class="linenos">354</span><span class="k">try</span><span class="p">:</span>
+<span class="linenos">355</span>    <span class="n">display</span><span class="p">(</span><span class="n">copy</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide_index</span><span class="p">())</span>
+<span class="linenos">356</span><span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+<span class="linenos">357</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;display&#39; function only available in Ipython ... falling back to printing.&quot;</span><span class="p">)</span>
+<span class="linenos">358</span>    <span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">))</span>
+<span class="linenos">359</span>
+<span class="linenos">360</span>
+<span class="linenos">361</span><span class="c1"># %% Settings for plotting</span>
+<span class="linenos">362</span>
+<span class="linenos">363</span><span class="c1"># Remove keyboard, we are not plotting it, and not using it for summary stats</span>
+<span class="linenos">364</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Teensy 3.2 Keyboard&quot;</span><span class="p">]</span>
+<span class="linenos">365</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dropped &#39;Teensy 3.2 Keyboard&#39; from data.&quot;</span><span class="p">)</span>
+<span class="linenos">366</span>
+<span class="linenos">367</span><span class="c1"># Set plotting order</span>
+<span class="linenos">368</span><span class="n">order</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;device&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;latency-ms-mean&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="linenos">369</span><span class="n">order</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Teensy 3.2 Keyboard&quot;</span><span class="p">)</span>
+<span class="linenos">370</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">plotting in order: </span><span class="si">{</span><span class="n">order</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">371</span>
+<span class="linenos">372</span><span class="c1"># y-axis label settings</span>
+<span class="linenos">373</span><span class="n">ylabel_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">device</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">order</span><span class="p">]))</span>
+<span class="linenos">374</span><span class="n">ylabels</span> <span class="o">=</span> <span class="p">[</span><span class="n">ylabel_map</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">order</span><span class="p">]</span>
+<span class="linenos">375</span>
+<span class="linenos">376</span>
+<span class="linenos">377</span><span class="c1"># %% Plot</span>
+<span class="linenos">378</span>
+<span class="linenos">379</span><span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">plotting_context</span><span class="p">(</span><span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.3</span><span class="p">):</span>
+<span class="linenos">380</span>    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">LETTER_WIDTH_INCH</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="linenos">381</span>
+<span class="linenos">382</span>    <span class="n">palette</span> <span class="o">=</span> <span class="s2">&quot;colorblind&quot;</span>
+<span class="linenos">383</span>
+<span class="linenos">384</span>    <span class="n">ptitprince</span><span class="o">.</span><span class="n">half_violinplot</span><span class="p">(</span>
+<span class="linenos">385</span>        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;device&quot;</span><span class="p">,</span>
+<span class="linenos">386</span>        <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
+<span class="linenos">387</span>        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;latency_ms&quot;</span><span class="p">,</span>
+<span class="linenos">388</span>        <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;os&quot;</span><span class="p">,</span>
+<span class="linenos">389</span>        <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Linux&quot;</span><span class="p">,</span> <span class="s2">&quot;Windows&quot;</span><span class="p">],</span>
+<span class="linenos">390</span>        <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+<span class="linenos">391</span>        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="linenos">392</span>        <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">,</span>
+<span class="linenos">393</span>        <span class="n">split</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">394</span>        <span class="n">inner</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">395</span>        <span class="n">offset</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+<span class="linenos">396</span>    <span class="p">)</span>
+<span class="linenos">397</span>
+<span class="linenos">398</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">collections</span><span class="p">:</span>
+<span class="linenos">399</span>        <span class="n">i</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.65</span><span class="p">)</span>
+<span class="linenos">400</span>
+<span class="linenos">401</span>    <span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span>
+<span class="linenos">402</span>        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;device&quot;</span><span class="p">,</span>
+<span class="linenos">403</span>        <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
+<span class="linenos">404</span>        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;latency_ms&quot;</span><span class="p">,</span>
+<span class="linenos">405</span>        <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;os&quot;</span><span class="p">,</span>
+<span class="linenos">406</span>        <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Linux&quot;</span><span class="p">,</span> <span class="s2">&quot;Windows&quot;</span><span class="p">],</span>
+<span class="linenos">407</span>        <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+<span class="linenos">408</span>        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="linenos">409</span>        <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">,</span>
+<span class="linenos">410</span>        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<span class="linenos">411</span>        <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">412</span>        <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">413</span>        <span class="n">jitter</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">414</span>        <span class="n">dodge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">415</span>        <span class="n">edgecolor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="linenos">416</span>    <span class="p">)</span>
+<span class="linenos">417</span>
+<span class="linenos">418</span>    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+<span class="linenos">419</span>        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;device&quot;</span><span class="p">,</span>
+<span class="linenos">420</span>        <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
+<span class="linenos">421</span>        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;latency_ms&quot;</span><span class="p">,</span>
+<span class="linenos">422</span>        <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;os&quot;</span><span class="p">,</span>
+<span class="linenos">423</span>        <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Linux&quot;</span><span class="p">,</span> <span class="s2">&quot;Windows&quot;</span><span class="p">],</span>
+<span class="linenos">424</span>        <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+<span class="linenos">425</span>        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="linenos">426</span>        <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">,</span>
+<span class="linenos">427</span>        <span class="n">color</span><span class="o">=</span><span class="n">palette</span><span class="p">,</span>
+<span class="linenos">428</span>        <span class="n">width</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+<span class="linenos">429</span>        <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="linenos">430</span>        <span class="n">dodge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">431</span>        <span class="n">showcaps</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">432</span>        <span class="n">boxprops</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;zorder&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+<span class="linenos">433</span>        <span class="n">showfliers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">434</span>        <span class="n">whiskerprops</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;linewidth&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;zorder&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+<span class="linenos">435</span>        <span class="n">saturation</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+<span class="linenos">436</span>    <span class="p">)</span>
+<span class="linenos">437</span>
+<span class="linenos">438</span>    <span class="n">xlim</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span>
+<span class="linenos">439</span>    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="linenos">440</span>
+<span class="linenos">441</span>    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">ylabels</span><span class="p">)</span>
+<span class="linenos">442</span>    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Device&quot;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="linenos">443</span>
+<span class="linenos">444</span>    <span class="c1"># Limit the extent of the y axis, which makes data non-visible, ...</span>
+<span class="linenos">445</span>    <span class="c1"># so add a big outlier marker (red star) for that to mention in the caption</span>
+<span class="linenos">446</span>    <span class="n">upper_ylim</span> <span class="o">=</span> <span class="mf">2.1</span>
+<span class="linenos">447</span>    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">upper_ylim</span><span class="p">))</span>
+<span class="linenos">448</span>    <span class="n">text_pos</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="linenos">449</span>    <span class="n">outlier_text_obj</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+<span class="linenos">450</span>        <span class="n">x</span><span class="o">=</span><span class="n">text_pos</span><span class="p">,</span>
+<span class="linenos">451</span>        <span class="n">y</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="linenos">452</span>        <span class="n">s</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span>
+<span class="linenos">453</span>        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+<span class="linenos">454</span>        <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span>
+<span class="linenos">455</span>        <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+<span class="linenos">456</span>        <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+<span class="linenos">457</span>    <span class="p">)</span>
+<span class="linenos">458</span>
+<span class="linenos">459</span>    <span class="c1"># Sanity check we did not cut any other outliers</span>
+<span class="linenos">460</span>    <span class="n">outliers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;latency_ms&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">upper_ylim</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">461</span>    <span class="k">assert</span> <span class="n">outliers</span><span class="p">[</span><span class="s2">&quot;meas&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="linenos">462</span>
+<span class="linenos">463</span>    <span class="c1"># Sanity check we make the star in the correct position (in the middle)</span>
+<span class="linenos">464</span>    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>
+<span class="linenos">465</span>    <span class="k">assert</span> <span class="n">order</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;LabJack U3 (writeRegister)&quot;</span>
+<span class="linenos">466</span>    <span class="k">assert</span> <span class="n">text_pos</span> <span class="o">==</span> <span class="mf">0.5</span>
+<span class="linenos">467</span>
+<span class="linenos">468</span>    <span class="c1"># Print short report</span>
+<span class="linenos">469</span>    <span class="nb">print</span><span class="p">(</span>
+<span class="linenos">470</span>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">outliers</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> outliers not shown for </span><span class="si">{</span><span class="n">outliers</span><span class="p">[</span><span class="s1">&#39;meas&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">. &quot;</span>
+<span class="linenos">471</span>        <span class="sa">f</span><span class="s2">&quot;Ranging from </span><span class="si">{</span><span class="n">outliers</span><span class="p">[</span><span class="s1">&#39;latency_ms&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2"> to &quot;</span>
+<span class="linenos">472</span>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">outliers</span><span class="p">[</span><span class="s1">&#39;latency_ms&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2"> ms &quot;</span>
+<span class="linenos">473</span>        <span class="sa">f</span><span class="s2">&quot;(mean: </span><span class="si">{</span><span class="n">outliers</span><span class="p">[</span><span class="s1">&#39;latency_ms&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2"> ms)&quot;</span>
+<span class="linenos">474</span>    <span class="p">)</span>
+<span class="linenos">475</span>
+<span class="linenos">476</span>    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Latency (ms)&quot;</span><span class="p">)</span>
+<span class="linenos">477</span>    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;major&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="linenos">478</span>
+<span class="linenos">479</span>    <span class="c1"># Get the handles and labels. For this example it&#39;ll be 2 tuples</span>
+<span class="linenos">480</span>    <span class="c1"># of length 4 each.</span>
+<span class="linenos">481</span>    <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+<span class="linenos">482</span>
+<span class="linenos">483</span>    <span class="c1"># When creating the legend, only use the first two elements</span>
+<span class="linenos">484</span>    <span class="c1"># to effectively remove the last two.</span>
+<span class="linenos">485</span>    <span class="n">lh</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+<span class="linenos">486</span>    <span class="n">lh</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Operating System&quot;</span><span class="p">)</span>
+<span class="linenos">487</span>
+<span class="linenos">488</span>    <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+<span class="linenos">489</span>
+<span class="linenos">490</span>    <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="s2">&quot;pdf&quot;</span><span class="p">]:</span>
+<span class="linenos">491</span>        <span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;figure2_raincloud.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="linenos">492</span>        <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">OUTDIR</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+<span class="linenos">493</span>        <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="linenos">494</span>        <span class="n">dpi</span> <span class="o">=</span> <span class="mi">600</span> <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s2">&quot;png&quot;</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="linenos">495</span>        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">,</span> <span class="n">bbox_extra_artists</span><span class="o">=</span><span class="p">(</span><span class="n">outlier_text_obj</span><span class="p">,))</span>
+<span class="linenos">496</span>
+<span class="linenos">497</span><span class="c1"># %% Calculate summary statistics between OS</span>
+<span class="linenos">498</span>
+<span class="linenos">499</span><span class="c1"># Drop the LabJack U3 from this comparison, as it&#39;s an outlier</span>
+<span class="linenos">500</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;LabJack&quot;</span><span class="p">)]</span>
+<span class="linenos">501</span>
+<span class="linenos">502</span><span class="c1"># Guarantee that Linux is listed before Windows, to later have the appropriate diff</span>
+<span class="linenos">503</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;os&quot;</span><span class="p">,</span> <span class="s2">&quot;device&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">])</span>
+<span class="linenos">504</span>
+<span class="linenos">505</span><span class="n">df_os</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+<span class="linenos">506</span>    <span class="n">df</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;latency_ms&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;os&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">,</span> <span class="n">iqr</span><span class="p">]</span>
+<span class="linenos">507</span><span class="p">)</span>
+<span class="linenos">508</span><span class="n">df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Windows - Linux&quot;</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">df_os</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">509</span>
+<span class="linenos">510</span><span class="k">try</span><span class="p">:</span>
+<span class="linenos">511</span>    <span class="n">display</span><span class="p">(</span><span class="n">df_os</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="linenos">512</span><span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+<span class="linenos">513</span>    <span class="nb">print</span><span class="p">(</span><span class="n">df_os</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="linenos">514</span>
+<span class="linenos">515</span><span class="c1"># %% Where is the OS effect strongest?</span>
+<span class="linenos">516</span>
+<span class="linenos">517</span><span class="c1"># exclude LabJack U3 as an outlier</span>
+<span class="linenos">518</span><span class="c1"># exclude parallel port, gets mentioned in the text anyhow</span>
+<span class="linenos">519</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Effect of OS (Windows - Linux) on latency in ms</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">520</span><span class="nb">print</span><span class="p">(</span>
+<span class="linenos">521</span>    <span class="n">table</span><span class="p">[</span>
+<span class="linenos">522</span>        <span class="o">~</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+<span class="linenos">523</span>            <span class="p">[</span>
+<span class="linenos">524</span>                <span class="s2">&quot;Teensy 3.2 Keyboard&quot;</span><span class="p">,</span>
+<span class="linenos">525</span>                <span class="s2">&quot;Parallel Port&quot;</span><span class="p">,</span>
+<span class="linenos">526</span>                <span class="s2">&quot;LabJack U3 (writeRegister)&quot;</span><span class="p">,</span>
+<span class="linenos">527</span>                <span class="s2">&quot;LabJack U3 (setFIOState)&quot;</span><span class="p">,</span>
+<span class="linenos">528</span>            <span class="p">]</span>
+<span class="linenos">529</span>        <span class="p">)</span>
+<span class="linenos">530</span>    <span class="p">]</span>
+<span class="linenos">531</span>    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;device&quot;</span><span class="p">)[</span><span class="s2">&quot;latency-ms-mean&quot;</span><span class="p">]</span>
+<span class="linenos">532</span>    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">)</span>
+<span class="linenos">533</span>    <span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+<span class="linenos">534</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="firmware-used-on-device-during-study">
+<h2>Firmware used on device during study<a class="headerlink" href="#firmware-used-on-device-during-study" title="Link to this heading">¶</a></h2>
+<p>This firmware written in C was running on each device that was tested (except the parallel port).</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="cm">/*</span>
+<span class="linenos">  2</span><span class="cm">Device firmware for a USB trigger box (Appelhoff &amp; Stenner, 2021).</span>
+<span class="linenos">  3</span>
+<span class="linenos">  4</span><span class="cm">MIT License</span>
+<span class="linenos">  5</span>
+<span class="linenos">  6</span><span class="cm">Copyright 2021 Stefan Appelhoff, Tristan Stenner</span>
+<span class="linenos">  7</span>
+<span class="linenos">  8</span><span class="cm">*/</span>
+<span class="linenos">  9</span>
+<span class="linenos"> 10</span><span class="c1">// Teensys can send emulated key presses to the host computer.</span>
+<span class="linenos"> 11</span><span class="c1">// Enabling this option &quot;presses&quot; the Enter key every 90ms when pin 10 is</span>
+<span class="linenos"> 12</span><span class="c1">// connected to ground. Enabled by default on Teensys when compiling with</span>
+<span class="linenos"> 13</span><span class="c1">// keyboard support unless ENABLE_KEYBOARD=0 is defined</span>
+<span class="linenos"> 14</span><span class="cp">#ifndef ENABLE_KEYBOARD</span>
+<span class="linenos"> 15</span><span class="cp">#if defined(CORE_TEENSY_KEYBOARD) || defined(USB_SERIAL_HID)</span>
+<span class="linenos"> 16</span><span class="cp">#define ENABLE_KEYBOARD 1</span>
+<span class="linenos"> 17</span><span class="cp">#else</span>
+<span class="linenos"> 18</span><span class="cp">#define ENABLE_KEYBOARD 0</span>
+<span class="linenos"> 19</span><span class="cp">#endif</span>
+<span class="linenos"> 20</span><span class="cp">#endif</span>
+<span class="linenos"> 21</span>
+<span class="linenos"> 22</span><span class="c1">// send special pin patterns to troubleshoot connection issues after receiving</span>
+<span class="linenos"> 23</span><span class="c1">// either 254 or 255 as value</span>
+<span class="linenos"> 24</span><span class="cp">#define ENABLE_PIN_TESTS 0</span>
+<span class="linenos"> 25</span>
+<span class="linenos"> 26</span><span class="c1">// function prototype; sets output pins in a loop</span>
+<span class="linenos"> 27</span><span class="kt">void</span><span class="w"> </span><span class="nf">setOutputsLoop</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">outChar</span><span class="p">);</span>
+<span class="linenos"> 28</span>
+<span class="linenos"> 29</span><span class="c1">// device specific values for outputPins and setOutputs;</span>
+<span class="linenos"> 30</span><span class="cp">#if defined(ARDUINO_AVR_MICRO)</span>
+<span class="linenos"> 31</span><span class="n">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">outputPins</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
+<span class="linenos"> 32</span><span class="k">auto</span><span class="w"> </span><span class="n">setOutputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setOutputsLoop</span><span class="p">;</span>
+<span class="linenos"> 33</span>
+<span class="linenos"> 34</span><span class="cp">#elif defined(ARDUINO_AVR_LEONARDO) || defined(ARDUINO_AVR_UNO)</span>
+<span class="linenos"> 35</span><span class="n">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">outputPins</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">};</span>
+<span class="linenos"> 36</span><span class="k">auto</span><span class="w"> </span><span class="n">setOutputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setOutputsLoop</span><span class="p">;</span>
+<span class="linenos"> 37</span>
+<span class="linenos"> 38</span><span class="cp">#elif defined(CORE_TEENSY)</span>
+<span class="linenos"> 39</span><span class="n">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">outputPins</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">};</span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span><span class="kt">void</span><span class="w"> </span><span class="nf">setOutputs</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">outChar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 42</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">digitalWriteFast</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">outChar</span><span class="o">&amp;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="p">));</span>
+<span class="linenos"> 43</span><span class="p">}</span>
+<span class="linenos"> 44</span>
+<span class="linenos"> 45</span><span class="cp">#else</span>
+<span class="linenos"> 46</span><span class="cp">#warning &quot;Unknown board&quot;</span>
+<span class="linenos"> 47</span><span class="c1">// Fall back to default values</span>
+<span class="linenos"> 48</span><span class="n">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">outputPins</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">};</span>
+<span class="linenos"> 49</span><span class="k">auto</span><span class="w"> </span><span class="n">setOutputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setOutputsLoop</span><span class="p">;</span>
+<span class="linenos"> 50</span><span class="cp">#endif</span>
+<span class="linenos"> 51</span>
+<span class="linenos"> 52</span><span class="kt">void</span><span class="w"> </span><span class="nf">setOutputsLoop</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">outChar</span><span class="p">)</span>
+<span class="linenos"> 53</span><span class="p">{</span>
+<span class="linenos"> 54</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">outputPins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">outChar</span><span class="o">&amp;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="p">));</span>
+<span class="linenos"> 55</span><span class="p">}</span>
+<span class="linenos"> 56</span>
+<span class="linenos"> 57</span><span class="kt">void</span><span class="w"> </span><span class="nf">clearOutputs</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 58</span><span class="w">  </span><span class="n">setOutputs</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="linenos"> 59</span><span class="p">}</span>
+<span class="linenos"> 60</span>
+<span class="linenos"> 61</span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 62</span><span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+<span class="linenos"> 63</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">pin</span><span class="o">:</span><span class="w"> </span><span class="n">outputPins</span><span class="p">)</span><span class="w"> </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="linenos"> 64</span>
+<span class="linenos"> 65</span><span class="w">  </span><span class="c1">// Connect pin 10 to GND to enable keyboard emulation</span>
+<span class="linenos"> 66</span><span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
+<span class="linenos"> 67</span><span class="p">}</span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 70</span><span class="cp">#if ENABLE_KEYBOARD</span>
+<span class="linenos"> 71</span><span class="w">	</span><span class="c1">// Helper variable to keep the time of the last synthetic keyboard event</span>
+<span class="linenos"> 72</span><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="n">elapsedMillis</span><span class="w"> </span><span class="n">lastKbdEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">digitalRead</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">lastKbdEvent</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 75</span><span class="w">    </span><span class="n">digitalWriteFast</span><span class="p">(</span><span class="n">outputPins</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="linenos"> 76</span><span class="w">    </span><span class="n">Keyboard</span><span class="p">.</span><span class="n">press</span><span class="p">(</span><span class="n">KEY_ENTER</span><span class="p">);</span>
+<span class="linenos"> 77</span><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos"> 78</span><span class="w">    </span><span class="n">Keyboard</span><span class="p">.</span><span class="n">release</span><span class="p">(</span><span class="n">KEY_ENTER</span><span class="p">);</span>
+<span class="linenos"> 79</span><span class="w">    </span><span class="n">digitalWriteFast</span><span class="p">(</span><span class="n">outputPins</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="linenos"> 80</span><span class="w">    </span><span class="n">lastKbdEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 81</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 82</span><span class="cp">#warning &quot;Enabling keyboard&quot;</span>
+<span class="linenos"> 83</span><span class="cp">#else</span>
+<span class="linenos"> 84</span><span class="cp">#warning &quot;Keyboard disabled&quot;</span>
+<span class="linenos"> 85</span><span class="cp">#endif</span>
+<span class="linenos"> 86</span>
+<span class="linenos"> 87</span><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos"> 88</span><span class="w">  </span><span class="c1">// read in a single value</span>
+<span class="linenos"> 89</span><span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">inChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">ENABLE_PIN_TESTS</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">inChar</span><span class="o">==</span><span class="mi">255</span><span class="p">)</span>
+<span class="linenos"> 92</span><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">inChar</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">inChar</span><span class="o">&lt;</span><span class="mi">255</span><span class="p">;</span><span class="w"> </span><span class="n">inChar</span><span class="o">++</span><span class="p">){</span>
+<span class="linenos"> 93</span><span class="w">      </span><span class="n">setOutputs</span><span class="p">(</span><span class="n">inChar</span><span class="p">);</span>
+<span class="linenos"> 94</span><span class="w">      </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="linenos"> 95</span><span class="w">      </span><span class="n">clearOutputs</span><span class="p">();</span>
+<span class="linenos"> 96</span><span class="w">      </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="linenos"> 97</span><span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">inChar</span><span class="p">);</span>
+<span class="linenos"> 98</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 99</span><span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">ENABLE_PIN_TESTS</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">inChar</span><span class="o">==</span><span class="mi">254</span><span class="p">)</span>
+<span class="linenos">100</span><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">inChar</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">inChar</span><span class="o">&lt;</span><span class="mi">256</span><span class="p">;</span><span class="n">inChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inChar</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">){</span>
+<span class="linenos">101</span><span class="w">      </span><span class="n">setOutputs</span><span class="p">(</span><span class="n">inChar</span><span class="p">);</span>
+<span class="linenos">102</span><span class="w">      </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="linenos">103</span><span class="w">      </span><span class="n">clearOutputs</span><span class="p">();</span>
+<span class="linenos">104</span><span class="w">      </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="linenos">105</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">106</span><span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">107</span><span class="w">    </span><span class="n">setOutputs</span><span class="p">(</span><span class="n">inChar</span><span class="p">);</span>
+<span class="linenos">108</span><span class="w">    </span><span class="c1">// also blink LED for visual feedback</span>
+<span class="linenos">109</span><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="linenos">110</span><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="linenos">111</span><span class="w">    </span><span class="n">clearOutputs</span><span class="p">();</span>
+<span class="linenos">112</span><span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="linenos">113</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">114</span>
+<span class="linenos">115</span><span class="w">  </span><span class="c1">// Optional: write back the received value</span>
+<span class="linenos">116</span><span class="w">  </span><span class="c1">// Serial.println((int) inChar);</span>
+<span class="linenos">117</span><span class="cp">#if defined(CORE_TEENSY)</span>
+<span class="linenos">118</span><span class="w">  </span><span class="c1">// Serial.send_now();</span>
+<span class="linenos">119</span><span class="cp">#endif</span>
+<span class="linenos">120</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="script-used-on-host-computer-during-study">
+<h2>Script used on host computer during study<a class="headerlink" href="#script-used-on-host-computer-during-study" title="Link to this heading">¶</a></h2>
+<p>This Python script was running on the host computer.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="ch">#!/usr/bin/env python</span>
+<span class="linenos">  2</span><span class="sd">&quot;&quot;&quot;Measure TTL trigger sending latency of several devices.</span>
+<span class="linenos">  3</span>
+<span class="linenos">  4</span><span class="sd">Required packages:</span>
+<span class="linenos">  5</span>
+<span class="linenos">  6</span><span class="sd">- numpy (https://pypi.org/project/numpy/)</span>
+<span class="linenos">  7</span><span class="sd">- psychtoolbox (https://pypi.org/project/psychtoolbox/)</span>
+<span class="linenos">  8</span><span class="sd">- pylsl (https://pypi.org/project/pylsl/)</span>
+<span class="linenos">  9</span><span class="sd">- pyparallel (https://pypi.org/project/pyparallel/)</span>
+<span class="linenos"> 10</span>
+<span class="linenos"> 11</span><span class="sd">MIT License</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span><span class="sd">Copyright 2021 Stefan Appelhoff, Tristan Stenner</span>
+<span class="linenos"> 14</span>
+<span class="linenos"> 15</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 16</span>
+<span class="linenos"> 17</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos"> 18</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 19</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="linenos"> 20</span>
+<span class="linenos"> 21</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 22</span><span class="kn">import</span> <span class="nn">pylsl</span>
+<span class="linenos"> 23</span><span class="kn">import</span> <span class="nn">psychtoolbox</span> <span class="k">as</span> <span class="nn">ptb</span>
+<span class="linenos"> 24</span>
+<span class="linenos"> 25</span><span class="n">port</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos"> 26</span>
+<span class="linenos"> 27</span><span class="c1"># Define the &quot;send_trigger&quot; function depending on which device we are testing</span>
+<span class="linenos"> 28</span><span class="k">if</span> <span class="n">port</span> <span class="o">==</span> <span class="s1">&#39;parport&#39;</span><span class="p">:</span>
+<span class="linenos"> 29</span>    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span><span class="p">:</span>
+<span class="linenos"> 30</span>        <span class="kn">from</span> <span class="nn">psychopy.parallel</span> <span class="kn">import</span> <span class="n">ParallelPort</span> <span class="k">as</span> <span class="n">PP</span>
+<span class="linenos"> 31</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 32</span>        <span class="kn">from</span> <span class="nn">parallel</span> <span class="kn">import</span> <span class="n">Parallel</span> <span class="k">as</span> <span class="n">PP</span>
+<span class="linenos"> 33</span>    <span class="n">parport</span> <span class="o">=</span> <span class="n">PP</span><span class="p">()</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span>    <span class="k">def</span> <span class="nf">send_trigger</span><span class="p">():</span>
+<span class="linenos"> 36</span>        <span class="n">parport</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 37</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">.005</span><span class="p">)</span>
+<span class="linenos"> 38</span>        <span class="n">parport</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 39</span>
+<span class="linenos"> 40</span><span class="k">elif</span> <span class="n">port</span> <span class="o">==</span> <span class="s1">&#39;labjack&#39;</span><span class="p">:</span>
+<span class="linenos"> 41</span>    <span class="kn">import</span> <span class="nn">u3</span>
+<span class="linenos"> 42</span>    <span class="n">lj</span> <span class="o">=</span> <span class="n">u3</span><span class="o">.</span><span class="n">U3</span><span class="p">()</span>
+<span class="linenos"> 43</span>
+<span class="linenos"> 44</span>    <span class="k">def</span> <span class="nf">send_trigger</span><span class="p">():</span>
+<span class="linenos"> 45</span>        <span class="c1"># Using the U3, we can either use the writeRegister method, ...</span>
+<span class="linenos"> 46</span>        <span class="c1"># or the setFIOState method.</span>
+<span class="linenos"> 47</span>        <span class="n">lj</span><span class="o">.</span><span class="n">writeRegister</span><span class="p">(</span><span class="mi">6700</span><span class="p">,</span> <span class="mh">0xFF01</span><span class="p">)</span>
+<span class="linenos"> 48</span>        <span class="c1"># lj.setFIOState(0, 1)</span>
+<span class="linenos"> 49</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">.01</span><span class="p">)</span>
+<span class="linenos"> 50</span>        <span class="n">lj</span><span class="o">.</span><span class="n">writeRegister</span><span class="p">(</span><span class="mi">6700</span><span class="p">,</span> <span class="mh">0xFF00</span><span class="p">)</span>
+<span class="linenos"> 51</span>        <span class="c1"># lj.setFIOState(0, 0)</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 54</span>    <span class="c1"># serial port</span>
+<span class="linenos"> 55</span>    <span class="n">ser</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ptb</span><span class="o">.</span><span class="n">IOPort</span><span class="p">(</span><span class="s1">&#39;OpenSerialPort&#39;</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span>
+<span class="linenos"> 56</span>                        <span class="s1">&#39;BaudRate=115200 FlowControl=None ReceiveTimeout=0.05&#39;</span><span class="p">)</span>
+<span class="linenos"> 57</span>
+<span class="linenos"> 58</span>    <span class="k">def</span> <span class="nf">send_trigger</span><span class="p">():</span>
+<span class="linenos"> 59</span>        <span class="n">ptb</span><span class="o">.</span><span class="n">IOPort</span><span class="p">(</span><span class="s1">&#39;Write&#39;</span><span class="p">,</span> <span class="n">ser</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\x01</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos"> 60</span>        <span class="c1"># &quot;Sleep&quot; is handled by firmware on device</span>
+<span class="linenos"> 61</span>        <span class="c1"># Flush incoming data</span>
+<span class="linenos"> 62</span>        <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">ptb</span><span class="o">.</span><span class="n">IOPort</span><span class="p">(</span><span class="s1">&#39;Read&#39;</span><span class="p">,</span> <span class="n">ser</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="linenos"> 63</span>
+<span class="linenos"> 64</span><span class="c1"># Create an LSL outlet</span>
+<span class="linenos"> 65</span><span class="n">outlet</span> <span class="o">=</span> <span class="n">pylsl</span><span class="o">.</span><span class="n">StreamOutlet</span><span class="p">(</span>
+<span class="linenos"> 66</span>    <span class="n">pylsl</span><span class="o">.</span><span class="n">StreamInfo</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;latencytest&#39;</span><span class="p">,</span>
+<span class="linenos"> 67</span>                     <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;marker&#39;</span><span class="p">,</span>
+<span class="linenos"> 68</span>                     <span class="n">channel_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 69</span>                     <span class="n">nominal_srate</span><span class="o">=</span><span class="n">pylsl</span><span class="o">.</span><span class="n">IRREGULAR_RATE</span><span class="p">,</span>
+<span class="linenos"> 70</span>                     <span class="n">channel_format</span><span class="o">=</span><span class="n">pylsl</span><span class="o">.</span><span class="n">cf_string</span><span class="p">))</span>
+<span class="linenos"> 71</span>
+<span class="linenos"> 72</span><span class="c1"># Get the psychHID index for the emulated keyboard</span>
+<span class="linenos"> 73</span><span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 74</span>    <span class="n">kbdidx</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+<span class="linenos"> 75</span>        <span class="p">(</span><span class="n">dev</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">dev</span> <span class="ow">in</span> <span class="n">ptb</span><span class="o">.</span><span class="n">PsychHID</span><span class="p">(</span><span class="s1">&#39;devices&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="linenos"> 76</span>         <span class="k">if</span> <span class="n">dev</span><span class="p">[</span><span class="s1">&#39;product&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Teensyduino&#39;</span><span class="p">))</span>
+<span class="linenos"> 77</span>    <span class="p">)</span>
+<span class="linenos"> 78</span><span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+<span class="linenos"> 79</span>    <span class="n">kbdidx</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 80</span>
+<span class="linenos"> 81</span><span class="c1"># Initialize the Psychtoolbox keyboard queue</span>
+<span class="linenos"> 82</span><span class="n">keycode</span> <span class="o">=</span> <span class="mi">12</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span> <span class="k">else</span> <span class="mi">36</span>
+<span class="linenos"> 83</span><span class="n">keys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span>
+<span class="linenos"> 84</span><span class="n">keys</span><span class="p">[</span><span class="n">keycode</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 85</span><span class="n">ptb</span><span class="o">.</span><span class="n">PsychHID</span><span class="p">(</span><span class="s1">&#39;KbQueueCreate&#39;</span><span class="p">,</span> <span class="n">kbdidx</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
+<span class="linenos"> 86</span><span class="n">ptb</span><span class="o">.</span><span class="n">PsychHID</span><span class="p">(</span><span class="s1">&#39;KbQueueStart&#39;</span><span class="p">,</span> <span class="n">kbdidx</span><span class="p">)</span>
+<span class="linenos"> 87</span>
+<span class="linenos"> 88</span><span class="c1"># Call both functions once to make sure the C libraries are loaded</span>
+<span class="linenos"> 89</span><span class="n">pylsl</span><span class="o">.</span><span class="n">local_clock</span><span class="p">()</span>
+<span class="linenos"> 90</span><span class="n">ptb</span><span class="o">.</span><span class="n">GetSecs</span><span class="p">()</span>
+<span class="linenos"> 91</span>
+<span class="linenos"> 92</span><span class="c1"># Make sure LSL and PTB use the same underlying clock</span>
+<span class="linenos"> 93</span><span class="n">timediff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span>
+<span class="linenos"> 94</span>    <span class="n">pylsl</span><span class="o">.</span><span class="n">local_clock</span><span class="p">()</span><span class="o">-</span><span class="n">ptb</span><span class="o">.</span><span class="n">GetSecs</span><span class="p">()</span><span class="o">+</span><span class="n">ptb</span><span class="o">.</span><span class="n">GetSecs</span><span class="p">()</span><span class="o">-</span><span class="n">pylsl</span><span class="o">.</span><span class="n">local_clock</span><span class="p">()</span>
+<span class="linenos"> 95</span><span class="p">)</span>
+<span class="linenos"> 96</span><span class="k">assert</span><span class="p">(</span><span class="n">timediff</span> <span class="o">&lt;</span> <span class="mf">1e-3</span><span class="p">)</span>
+<span class="linenos"> 97</span>
+<span class="linenos"> 98</span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos"> 99</span>    <span class="c1"># Wait for the Teensy to simulate a keypress</span>
+<span class="linenos">100</span>    <span class="n">ptb</span><span class="o">.</span><span class="n">PsychHID</span><span class="p">(</span><span class="s1">&#39;KbQueueFlush&#39;</span><span class="p">,</span> <span class="n">kbdidx</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="linenos">101</span>    <span class="n">event</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">ptb</span><span class="o">.</span><span class="n">PsychHID</span><span class="p">(</span><span class="s1">&#39;KbQueueGetEvent&#39;</span><span class="p">,</span> <span class="n">kbdidx</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">102</span>    <span class="n">t0</span> <span class="o">=</span> <span class="n">pylsl</span><span class="o">.</span><span class="n">local_clock</span><span class="p">()</span>
+<span class="linenos">103</span>    <span class="c1"># Don&#39;t send a trigger when waiting for the keypress timed out or the event</span>
+<span class="linenos">104</span>    <span class="c1"># signified the key release (as opposed to initially pressing it down)</span>
+<span class="linenos">105</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;Pressed&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">106</span>        <span class="k">continue</span>
+<span class="linenos">107</span>
+<span class="linenos">108</span>    <span class="n">send_trigger</span><span class="p">()</span>  <span class="c1"># Send a trigger via the configured interface</span>
+<span class="linenos">109</span>
+<span class="linenos">110</span>    <span class="c1"># Send an LSL event with the previously measured time to the LabStreamer</span>
+<span class="linenos">111</span>    <span class="n">outlet</span><span class="o">.</span><span class="n">do_push_sample</span><span class="p">(</span>
+<span class="linenos">112</span>        <span class="n">outlet</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span>
+<span class="linenos">113</span>        <span class="n">outlet</span><span class="o">.</span><span class="n">sample_type</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;1&#39;</span><span class="p">),</span>
+<span class="linenos">114</span>        <span class="n">pylsl</span><span class="o">.</span><span class="n">pylsl</span><span class="o">.</span><span class="n">c_double</span><span class="p">(</span><span class="n">t0</span><span class="p">),</span>
+<span class="linenos">115</span>        <span class="n">pylsl</span><span class="o">.</span><span class="n">pylsl</span><span class="o">.</span><span class="n">c_int</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019-2026, Stefan Appelhoff &amp; Tristan Stenner (CC BY 4.0). Last updated on 2026-01-01.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
